@@ -52,10 +52,10 @@ Text = "made by someone fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck f
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/main/r"))()
 	end)
   MainSection:NewButton("EVADE", "eavde", function()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/zReal-King/Evade/main/Main.lua'))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/zReal-King/Evade/main/Main.lua"))()
 	end)
   MainSection:NewButton("slap battle/slap royale", "HAHAHA", function()
-		https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/main/SB
+		loadstring(game.HttpGet("https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/main/SB"))()
 	end)
 --a
   local a = Window:NewTab("nothing here")
