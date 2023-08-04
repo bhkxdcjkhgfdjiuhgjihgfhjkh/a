@@ -1,4 +1,4 @@
---room auto--
+loadstring(game:HttpGet(('https://pastebin.com/raw/R8QMbhzv')))()
 if game.PlaceId ~= 6839171747 or game.ReplicatedStorage.GameData.Floor.Value ~= "Rooms" then
 	game.StarterGui:SetCore("SendNotification", { Title = "Invalid Place"; Text = "The game detected appears to not be rooms. Please execute this while in rooms!" })
 	
