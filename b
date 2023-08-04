@@ -41,6 +41,9 @@ Text = "made by someone fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck f
     MainSection:NewButton("doors", "door Nerd script", function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/main/NeRDV5.lua"))()
 	end)
+     MainSection:NewButton("build a boat", "to ohio", function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Loader.lua"))()
+	end)
 --a
   local a = Window:NewTab("nothing here")
     local aSection = a:NewSection("nothing here")
