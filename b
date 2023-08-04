@@ -44,6 +44,9 @@ Text = "made by someone fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck f
      MainSection:NewButton("build a boat", "to ohio", function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Loader.lua"))()
 	end)
+     MainSection:NewButton("mm2", "mm2", function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/main/a"))()
+	end)
 --a
   local a = Window:NewTab("nothing here")
     local aSection = a:NewSection("nothing here")
