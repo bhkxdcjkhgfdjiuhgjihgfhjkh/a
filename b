@@ -66,6 +66,9 @@ Text = "made by someone fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck f
         MainSection:NewButton("doors", "door Nerd script", function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/LOLking123456/Drive/main/World1"))()
 	end)
+   MainSection:NewButton("EVADE", "eavde", function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/LilFrench21/Hecta/main/Script/Squid%20Game"))()
+	end)
 --a
   local a = Window:NewTab("nothing here")
     local aSection = a:NewSection("nothing here")
