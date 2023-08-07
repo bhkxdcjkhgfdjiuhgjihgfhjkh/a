@@ -66,8 +66,8 @@ Text = "made by someone fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck f
         MainSection:NewButton("drive world", "money🤑🤑🤑 script", function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/LOLking123456/Drive/main/World1"))()
 	end)
-   MainSection:NewButton("EVADE", "eavde", function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/LilFrench21/Hecta/main/Script/Squid%20Game"))()
+   MainSection:NewButton("nico's nextbot", ":D", function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Darkrai-X/main/Games/NicoNextBots", true))()
 	end)
 --a
   local a = Window:NewTab("nothing here")
