@@ -75,7 +75,7 @@ Text = "made by someone fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck f
 	aSection:NewButton("sus", "hehe", function()
         loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/a89a5d629d598fc198d1106fe6701685/raw/646a9cefa844cccd3c760715f59d25fe63b4a06b/shadowhub-NekoAndMore"))()
     end)
-       aSection:NewButton("sus", "hehe", function()
+       aSection:NewButton("slap battle", "dont use it", function()
         loadstring(game:HttpGet("https://github.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/blob/main/SB"))()
     end)
 --maker--
