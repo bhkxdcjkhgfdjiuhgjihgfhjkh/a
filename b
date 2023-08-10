@@ -20,17 +20,9 @@ Text = "made by someone fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck f
     end)
     PlayerSection:NewToggle("noclip", "test", function(noc)
    	 if noc then
-
-       		game:GetService("StarterGui"):SetCore("SendNotification",{ 	
-		Title = "noclip off",  	
-		Text = "a"
      		Clipon = true
          else
-		 game:GetService("StarterGui"):SetCore("SendNotification",{ 	
-			Title = "noclip on!",  	
-			Text = "have fun"
 	 	Clipon = false
-
 --ui
   local UI = Window:NewTab("UI")
     local UISection = UI:NewSection("UI")
