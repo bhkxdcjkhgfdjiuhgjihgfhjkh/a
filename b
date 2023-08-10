@@ -23,6 +23,8 @@ Text = "made by someone fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck f
      		Clipon = true
          else
 	 	Clipon = false
+   	end
+end)
 --ui
   local UI = Window:NewTab("UI")
     local UISection = UI:NewSection("UI")
