@@ -29,7 +29,7 @@ end)
   local UI = Window:NewTab("UI")
     local UISection = UI:NewSection("UI")
 
-	UISection:NewKeybind("toggle ui", "no", Enum.KeyCode.F, function()
+	UISection:NewKeybind("toggle ui", "no", Enum.KeyCode.X, function()
 		Library:ToggleUI()
 	end)
 --script--
