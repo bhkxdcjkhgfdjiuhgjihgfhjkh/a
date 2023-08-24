@@ -18,12 +18,9 @@ Text = "made by someone fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck f
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
     end)
-    PlayerSection:NewToggle("noclip", "test", function(noc)
-   	 if noc then
-     		Clipon = true
-         else
-	 	Clipon = false
-   	end
+    PlayerSection:NewTextBox("set ur fps cap here-->", "set ur fps", function(fps)
+    	setfpscap(fps)
+     end)
 end)
 --ui
   local UI = Window:NewTab("UI")
