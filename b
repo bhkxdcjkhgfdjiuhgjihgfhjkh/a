@@ -81,40 +81,40 @@ local Window = Library.CreateLib("Im Stupid Hub", "Ocean")
 
      fpsSection:NewButton("set fps cap to 5", ":)", function()
     	setfpscap(5)
-     end
+     end)
      fpsSection:NewButton("set fps cap to 10", ":)", function()
     	setfpscap(10)
-     end
+     end)
      fpsSection:NewButton("set fps cap to 15", ":)", function()
     	setfpscap(15)
-     end
+     end)
      fpsSection:NewButton("set fps cap to 20", ":)", function()
     	setfpscap(20)
-    end
+    end)
     fpsSection:NewButton("set fps cap to 25", ":)", function()
     	setfpscap(25)
-    end
+    end)
     fpsSection:NewButton("set fps cap to 30", ":)", function()
     	setfpscap(30)
-    end
+    end)
     fpsSection:NewButton("set fps cap to 35", ":)", function()
     	setfpscap(35)
-    end
+    end)
     fpsSection:NewButton("set fps cap to 40", ":)", function()
     	setfpscap(40)
-    end
+    end)
     fpsSection:NewButton("set fps cap to 45", ":)", function()
     	setfpscap(45)
-    end
+    end)
     fpsSection:NewButton("set fps cap to 50", ":)", function()
     	setfpscap(50)
-    end
+    end)
     fpsSection:NewButton("set fps cap to 55", ":)", function()
     	setfpscap(55)
-    end
+    end)
     fpsSection:NewButton("set fps cap to 60", ":)", function()
     	setfpscap(60)
-    end
+    end)
 --maker--
   local c = Window:NewTab("creator")
     local cSection = c:NewSection("creator")
