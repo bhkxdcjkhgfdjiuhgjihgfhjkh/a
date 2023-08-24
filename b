@@ -1,9 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Im Stupid Hub", "Ocean")
-game:GetService("StarterGui"):SetCore("SendNotification",{ 	
-Title = "loaded!",  	
-Text = "made by someone fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck ",
-})
 --player speed/jumpower
     local Player = Window:NewTab("Player")
     local PlayerSection = Player:NewSection("Player")
@@ -21,7 +17,7 @@ Text = "made by someone fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck f
     PlayerSection:NewTextBox("set ur fps cap here-->", "set ur fps", function(fps)
     	setfpscap(fps)
      end)
-end)
+end
 --ui
   local UI = Window:NewTab("UI")
     local UISection = UI:NewSection("UI")
