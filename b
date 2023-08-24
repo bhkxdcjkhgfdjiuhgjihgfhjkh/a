@@ -14,9 +14,6 @@ local Window = Library.CreateLib("Im Stupid Hub", "Ocean")
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
     end)
-    PlayerSection:NewTextBox("set ur fps cap here-->", "set ur fps", function(fps)
-    	setfpscap(fps)
-     end)
 end
 --ui
   local UI = Window:NewTab("UI")
