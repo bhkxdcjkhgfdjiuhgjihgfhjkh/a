@@ -14,7 +14,6 @@ local Window = Library.CreateLib("Im Stupid Hub", "Ocean")
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
     end)
-end
 --ui
   local UI = Window:NewTab("UI")
     local UISection = UI:NewSection("UI")
