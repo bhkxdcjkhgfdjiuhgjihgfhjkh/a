@@ -76,6 +76,46 @@ end
        aSection:NewButton("slap battle", "dont use it", function()
         loadstring(game:HttpGet("https://github.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/blob/main/SB"))()
     end)
+--fps cap
+        local fps = Window:NewTab("fps cap")
+    local fpsSection = fps:NewSection("set ur fps cap")
+
+     fpsSection:NewButton("set fps cap to 5", ":)", function()
+    	setfpscap(5)
+     end
+     fpsSection:NewButton("set fps cap to 10", ":)", function()
+    	setfpscap(10)
+     end
+     fpsSection:NewButton("set fps cap to 15", ":)", function()
+    	setfpscap(15)
+     end
+     fpsSection:NewButton("set fps cap to 20", ":)", function()
+    	setfpscap(20)
+    end
+    fpsSection:NewButton("set fps cap to 25", ":)", function()
+    	setfpscap(25)
+    end
+    fpsSection:NewButton("set fps cap to 30", ":)", function()
+    	setfpscap(30)
+    end
+    fpsSection:NewButton("set fps cap to 35", ":)", function()
+    	setfpscap(35)
+    end
+    fpsSection:NewButton("set fps cap to 40", ":)", function()
+    	setfpscap(40)
+    end
+    fpsSection:NewButton("set fps cap to 45", ":)", function()
+    	setfpscap(45)
+    end
+    fpsSection:NewButton("set fps cap to 50", ":)", function()
+    	setfpscap(50)
+    end
+    fpsSection:NewButton("set fps cap to 55", ":)", function()
+    	setfpscap(55)
+    end
+    fpsSection:NewButton("set fps cap to 60", ":)", function()
+    	setfpscap(60)
+    end
 --maker--
   local c = Window:NewTab("creator")
     local cSection = c:NewSection("creator")
