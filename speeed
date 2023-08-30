@@ -1,0 +1,65 @@
+local uis = game:GetService("UserInputService")
+local iswpressed = false
+
+uis.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.W then
+        iswpressed = true
+        while iswpressed do
+            for _,v in pairs(workspace.Cars:GetChildren()) do
+                if tostring(v.Owner.Value) == game.Players.LocalPlayer.Name then
+                    v.Main.Velocity += v.Main.CFrame.LookVector * Vector3.new(10,0,10) - Vector3.new(0,0.5,0)
+                end
+            end
+            wait()
+        end
+    end
+end)
+uis.InputEnded:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.W then
+        iswpressed = false
+    end
+end)
+
+local uis = game:GetService("UserInputService")
+local iswpressed = false
+
+uis.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.S then
+        iswpressed = true
+        while iswpressed do
+            for _,v in pairs(workspace.Cars:GetChildren()) do
+                if tostring(v.Owner.Value) == game.Players.LocalPlayer.Name then
+                    v.Main.Velocity += v.Main.CFrame.LookVector * Vector3.new(-10,0,-10) - Vector3.new(0,0.5,0)
+                end
+            end
+            wait()
+        end
+    end
+end)
+uis.InputEnded:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.S then
+        iswpressed = false
+    end
+end)
+
+local uis = game:GetService("UserInputService")
+local iswpressed = false
+
+uis.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.C then
+        iswpressed = true
+        while iswpressed do
+            for _,v in pairs(workspace.Cars:GetChildren()) do
+                if tostring(v.Owner.Value) == game.Players.LocalPlayer.Name then
+                    v.Main.Velocity += v.Main.CFrame.LookVector * Vector3.new(0,0,0) - Vector3.new(0,-10,0)
+                end
+            end
+            wait()
+        end
+    end
+end)
+uis.InputEnded:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.C then
+        iswpressed = false
+    end
+end)
