@@ -125,3 +125,4 @@ local Window = Library.CreateLib("Im Stupid Hub", "Ocean")
 		Text = "fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck ",
 		})
 	end)
+ 
