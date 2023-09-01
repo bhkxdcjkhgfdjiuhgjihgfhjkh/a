@@ -63,7 +63,7 @@ local Window = Library.CreateLib("Im Stupid Hub", "Ocean")
         MainSection:NewButton("drive world", "SPEED!1!!", function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/main/speeed"))()
 	end)
-   MainSection:NewButton("", ":D", function()
+   MainSection:NewButton("sword fight bot", ":D", function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/main/swordfightbot", true))()
 	end)
 --a
