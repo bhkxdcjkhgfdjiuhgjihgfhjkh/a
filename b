@@ -55,7 +55,7 @@ local Window = Library.CreateLib("Im Stupid Hub", "Ocean")
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/main/r"))()
 	end)
   MainSection:NewButton("EVADE", "eavde", function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/zReal-King/Evade/main/Main.lua"))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Dc2-masket27727/Mobile-s-Hub/main/Main/Hydra/Evade.exe"))();
 	end)
   MainSection:NewButton("slap battle/slap royale", "HAHAHA", function()
 		loadstring(game.HttpGet("https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/main/SB"))()
