@@ -76,6 +76,7 @@ local function EWYS_fake_script()
 	local o = 0 
 	local txt = script.Parent
 	local UserInputService = game:GetService("UserInputService")
+	local play = workspace.Live[game.Players.LocalPlayer.Name]
 	script.Parent.MouseButton1Click:Connect(function()
 		if o == 1 then
 			o = 0
@@ -127,7 +128,7 @@ local function EWYS_fake_script()
 	UserInputService.InputBegan:Connect(function(input, _gameProcessed)
 		if input.KeyCode == Enum.KeyCode.C then
 			if o == 1 then
-				workspace.Live.Fuzruoycpu.HumanoidRootPart:PivotTo(workspace.Live.Fuzruoycpu.HumanoidRootPart.CFrame*CFrame.new(30,0,0))
+				play.HumanoidRootPart:PivotTo(play.HumanoidRootPart.CFrame*CFrame.new(30,0,0))
 			end 
 		end
 	end)
