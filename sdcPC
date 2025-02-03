@@ -102,7 +102,7 @@ local function RWGXI_fake_script()
 	local fd = 0
 	local txt = script.Parent
 	local UserInputService = game:GetService("UserInputService")
-	local ply = workspace:WaitForChild(game.Players.LocalPlayer.Name)
+	local ply = workspace.Live:WaitForChild(game.Players.LocalPlayer.Name)
 	script.Parent.MouseButton1Click:Connect(function()
 		if o == 1 then
 			o = 0
