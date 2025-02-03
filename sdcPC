@@ -244,11 +244,11 @@ local function KFHTZL_fake_script()
 	local humanoid = character:WaitForChild("Humanoid")
 	local function onAnimationPlayed(animationTrack)
 		if animationTrack.Animation.AnimationId == "rbxassetid://10479335397" then 
-			col =35
+			col =32
 			script.Parent.Text = "W/S dash: "..col/10
 		end
 		if animationTrack.Animation.AnimationId == "rbxassetid://10491993682" then 
-			col = 35
+			col = 32
 			script.Parent.Text = "W/S dash: "..col/10
 		end
 	end
