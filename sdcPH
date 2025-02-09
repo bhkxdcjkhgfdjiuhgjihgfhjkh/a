@@ -31,7 +31,7 @@ go.TextColor3 = Color3.fromRGB(255, 0, 0)
 go.TextSize = 14.000
 
 AD.Name = "AD"
-AD.Parent = dashcancelpc
+AD.Parent = dashcancelphone
 AD.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 AD.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AD.BorderSizePixel = 0
@@ -43,7 +43,7 @@ AD.TextColor3 = Color3.fromRGB(0, 0, 0)
 AD.TextSize = 14.000
 
 WS.Name = "WS"
-WS.Parent = dashcancelpc
+WS.Parent = dashcancelphone
 WS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 WS.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WS.BorderSizePixel = 0
