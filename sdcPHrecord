@@ -1,1 +1,324 @@
+local dashcancelphone = Instance.new("ScreenGui")
+local emable = Instance.new("Frame")
+local go = Instance.new("TextButton")
+local AD = Instance.new("TextLabel")
+local WS = Instance.new("TextLabel")
+local m1reset = Instance.new("Frame")
+local button = Instance.new("TextButton")
 
+dashcancelphone.Name = "dash cancel phone"
+dashcancelphone.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+dashcancelphone.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+emable.Name = "emable"
+emable.Parent = dashcancelphone
+emable.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+emable.BorderColor3 = Color3.fromRGB(0, 0, 0)
+emable.BorderSizePixel = 0
+emable.Position = UDim2.new(-0.00097965484, 0, 0.577355981, 0)
+emable.Size = UDim2.new(0, 79, 0, 76)
+
+go.Name = "go"
+go.Parent = emable
+go.BackgroundColor3 = Color3.fromRGB(139, 139, 139)
+go.BorderColor3 = Color3.fromRGB(0, 0, 0)
+go.BorderSizePixel = 0
+go.Position = UDim2.new(-0.0229055192, 0, 0.337382466, 0)
+go.Size = UDim2.new(0, 80, 0, 50)
+go.Font = Enum.Font.SourceSans
+go.Text = "ENABLE: false"
+go.TextColor3 = Color3.fromRGB(255, 0, 0)
+go.TextSize = 14.000
+
+AD.Name = "AD"
+AD.Parent = dashcancelphone
+AD.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AD.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AD.BorderSizePixel = 0
+AD.Position = UDim2.new(0, 0, 1, -30)
+AD.Size = UDim2.new(0, 67, 0, 30)
+AD.Font = Enum.Font.SourceSans
+AD.Text = "A/D dash: 0"
+AD.TextColor3 = Color3.fromRGB(0, 0, 0)
+AD.TextSize = 14.000
+
+WS.Name = "WS"
+WS.Parent = dashcancelphone
+WS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WS.BorderColor3 = Color3.fromRGB(0, 0, 0)
+WS.BorderSizePixel = 0
+WS.Position = UDim2.new(0, 0, 1, -60)
+WS.Size = UDim2.new(0, 67, 0, 30)
+WS.Font = Enum.Font.SourceSans
+WS.Text = "W/S dash: 0"
+WS.TextColor3 = Color3.fromRGB(0, 0, 0)
+WS.TextSize = 14.000
+
+m1reset.Name = "m1reset"
+m1reset.Parent = dashcancelphone
+m1reset.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+m1reset.BorderColor3 = Color3.fromRGB(0, 0, 0)
+m1reset.BorderSizePixel = 0
+m1reset.Position = UDim2.new(0.919037759, 0, 0.643423617, 0)
+m1reset.Size = UDim2.new(0, 59, 0, 51)
+
+button.Name = "button"
+button.Parent = m1reset
+button.BackgroundColor3 = Color3.fromRGB(139, 139, 139)
+button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+button.BorderSizePixel = 0
+button.Position = UDim2.new(0, 0, 0.337384403, 0)
+button.Size = UDim2.new(0, 58, 0, 33)
+button.Font = Enum.Font.SourceSans
+button.Text = "m1 Reset"
+button.TextColor3 = Color3.fromRGB(255, 255, 255)
+button.TextSize = 18.000
+
+local function JUSBO_fake_script()
+	local script = Instance.new('LocalScript', emable)
+
+	local Drag = script.Parent
+	gsCoreGui = game:GetService("CoreGui")
+	gsTween = game:GetService("TweenService")
+	local UserInputService = game:GetService("UserInputService")
+		local dragging
+		local dragInput
+		local dragStart
+		local startPos
+		local function update(input)
+			local delta = input.Position - dragStart
+			local dragTime = 0.04
+			local SmoothDrag = {}
+			SmoothDrag.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+			local dragSmoothFunction = gsTween:Create(Drag, TweenInfo.new(dragTime, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), SmoothDrag)
+			dragSmoothFunction:Play()
+		end
+		Drag.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+				dragging = true
+				dragStart = input.Position
+				startPos = Drag.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragging = false
+					end
+				end)
+			end
+		end)
+		Drag.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				dragInput = input
+			end
+		end)
+		UserInputService.InputChanged:Connect(function(input)
+			if input == dragInput and dragging and Drag.Size then
+				update(input)
+			end
+		end)
+	
+end
+coroutine.wrap(JUSBO_fake_script)()
+local function YHFXXCD_fake_script()
+	local script = Instance.new('LocalScript', go)
+
+	local o = 0 
+	local fd = 0
+	local txt = script.Parent
+	local UserInputService = game:GetService("UserInputService")
+	local ply = game.Players.LocalPlayer 
+	local character = ply.Character or ply.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+	local hrp = character:WaitForChild("HumanoidRootPart")
+	local m1 = script.Parent.Parent.Parent.m1reset.button
+	script.Parent.MouseButton1Click:Connect(function()
+		if o == 1 then
+			o = 0
+			txt.TextColor3 = Color3.fromRGB(255,0,0)
+			txt.Text = "Enable: False"
+		else
+			o = 1
+			txt.TextColor3	 = Color3.fromRGB(0,255,0)
+			txt.Text = "Enable: True"
+		end 
+	end)
+	local function fDash()
+		fd=1
+		local fp = Instance.new("Part",workspace)
+		fp.Anchored=true
+		fp.CanCollide = false
+		fp.Transparency = 1
+		fp.CFrame = hrp.CFrame * CFrame.new(30,0,0)
+	
+		local anim = Instance.new("Animation")
+		anim.AnimationId = "rbxassetid://10480793962"
+	
+		local attach = Instance.new("Attachment",hrp)
+	
+		local LinearVelocity = Instance.new("LinearVelocity",attach)
+	
+		local part = Instance.new("Part",workspace)
+		part.Anchored = true
+		part.CanCollide = false
+		part.Transparency = 1
+		part.CFrame = hrp.CFrame * CFrame.new(30,0,0)
+	
+		local animplay = humanoid:LoadAnimation(anim)
+		animplay:Play()
+	
+		LinearVelocity.MaxForce = 9999999
+		LinearVelocity.VectorVelocity = (part.Position-hrp.Position).Unit*Vector3.new(200,0,200)
+		LinearVelocity.Attachment0 = attach
+		wait(0.1)
+		attach:Destroy()
+		part:Destroy()
+		LinearVelocity:Destroy()
+		fd=0
+		wait(.05)
+		for i,a in pairs(character:GetDescendants()) do
+			if a:IsA("Part") then
+				a.AssemblyLinearVelocity = Vector3.new(0,0,0)
+			end
+		end
+		hrp.CFrame=fp.CFrame
+		fp:Destroy()
+	end 
+	local player = game.Players.LocalPlayer 
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+	local player = game.Players.LocalPlayer 
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+	local function onAnimationPlayed(animationTrack)
+		if o == 1 and fd == 0 then
+			if animationTrack.Animation.AnimationId == "rbxassetid://10480796021" then 
+				local p = game.Players.LocalPlayer 
+				local Humanoid = p.Character:WaitForChild("Humanoid")
+				for _,animTrack in pairs(Humanoid:GetPlayingAnimationTracks())do 
+          game.Players.LocalPlayer.PlayerGui.Emotes.ImageLabel.Visible = true
+					wait(.02)
+					animTrack:Stop()
+          game.Players.LocalPlayer.PlayerGui.Emotes.ImageLabel.Visible = false
+				end 
+			end 
+			if animationTrack.Animation.AnimationId == "rbxassetid://10480793962" then 
+				local p = game.Players.LocalPlayer 
+				local Humanoid = p.Character:WaitForChild("Humanoid")
+				for _,animTrack in pairs(Humanoid:GetPlayingAnimationTracks())do 
+          game.Players.LocalPlayer.PlayerGui.Emotes.ImageLabel.Visible = true
+					wait(.02)
+					animTrack:Stop()
+          game.Players.LocalPlayer.PlayerGui.Emotes.ImageLabel.Visible = false
+				end 
+			end
+		end
+	end 
+	humanoid.AnimationPlayed:Connect(onAnimationPlayed)humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+	m1.MouseButton1Click:Connect(fDash)
+	game.StarterGui:SetCore("SendNotification", {Title = "Made by",Text = "Fuzruoycpu :)"})
+end
+coroutine.wrap(YHFXXCD_fake_script)()
+local function BWLHQWC_fake_script()
+	local script = Instance.new('LocalScript', AD)
+
+	local m1 = script.Parent.Parent.m1reset.button
+	local col = 0
+	local txt = 0
+	local player = game.Players.LocalPlayer 
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+	local function onAnimationPlayed(animationTrack)
+		if animationTrack.Animation.AnimationId == "rbxassetid://10480796021" then 
+			col = 15
+			script.Parent.Text = "A/D dash: "..col/10
+		end
+		if animationTrack.Animation.AnimationId == "rbxassetid://10480793962" then 
+			col = 15
+			script.Parent.Text = "A/D dash: "..col/10
+		end
+	end
+	humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+	while wait()do
+		if col>0 then
+			wait(.1)
+			col=col-1
+			math.round(col)
+			txt=col/10
+			script.Parent.Text = "A/D dash: "..txt
+		end
+	end
+end
+coroutine.wrap(BWLHQWC_fake_script)()
+local function TAUPUT_fake_script()
+	local script = Instance.new('LocalScript', WS)
+
+	local col = 0
+	local txt = 0
+	local player = game.Players.LocalPlayer 
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+	local function onAnimationPlayed(animationTrack)
+		if animationTrack.Animation.AnimationId == "rbxassetid://10479335397" then 
+			col =35
+			script.Parent.Text = "W/S dash: "..col/10
+		end
+		if animationTrack.Animation.AnimationId == "rbxassetid://10491993682" then 
+			col = 35
+			script.Parent.Text = "W/S dash: "..col/10
+		end
+	end
+	humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+	while wait()do
+		if col>0 then
+			wait(.1)
+			col=col-1
+			math.round(col)
+			txt=col/10
+			script.Parent.Text = "W/S dash: "..txt
+		end
+	end
+end
+coroutine.wrap(TAUPUT_fake_script)()
+local function INEPY_fake_script()
+	local script = Instance.new('LocalScript', m1reset)
+
+	local Drag = script.Parent
+	gsCoreGui = game:GetService("CoreGui")
+	gsTween = game:GetService("TweenService")
+	local UserInputService = game:GetService("UserInputService")
+		local dragging
+		local dragInput
+		local dragStart
+		local startPos
+		local function update(input)
+			local delta = input.Position - dragStart
+			local dragTime = 0.04
+			local SmoothDrag = {}
+			SmoothDrag.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+			local dragSmoothFunction = gsTween:Create(Drag, TweenInfo.new(dragTime, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), SmoothDrag)
+			dragSmoothFunction:Play()
+		end
+		Drag.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+				dragging = true
+				dragStart = input.Position
+				startPos = Drag.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragging = false
+					end
+				end)
+			end
+		end)
+		Drag.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				dragInput = input
+			end
+		end)
+		UserInputService.InputChanged:Connect(function(input)
+			if input == dragInput and dragging and Drag.Size then
+				update(input)
+			end
+		end)
+	
+end
+coroutine.wrap(INEPY_fake_script)()
