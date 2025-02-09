@@ -1,0 +1,270 @@
+local dashcancelpc = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local go = Instance.new("TextButton")
+local AD = Instance.new("TextLabel")
+local WS = Instance.new("TextLabel")
+
+dashcancelpc.Name = "dash cancel pc"
+dashcancelpc.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+dashcancelpc.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = dashcancelpc
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(-0.00097965484, 0, 0.577355981, 0)
+Frame.Size = UDim2.new(0, 79, 0, 76)
+
+go.Name = "go"
+go.Parent = Frame
+go.BackgroundColor3 = Color3.fromRGB(139, 139, 139)
+go.BorderColor3 = Color3.fromRGB(0, 0, 0)
+go.BorderSizePixel = 0
+go.Position = UDim2.new(-0.0229055192, 0, 0.337382466, 0)
+go.Size = UDim2.new(0, 80, 0, 50)
+go.Font = Enum.Font.SourceSans
+go.Text = "ENABLE: false"
+go.TextColor3 = Color3.fromRGB(255, 0, 0)
+go.TextSize = 14.000
+
+AD.Name = "AD"
+AD.Parent = dashcancelpc
+AD.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AD.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AD.BorderSizePixel = 0
+AD.Position = UDim2.new(0, 0, 1, -30)
+AD.Size = UDim2.new(0, 150, 0, 30)
+AD.Font = Enum.Font.SourceSans
+AD.Text = "A/D dash:0"
+AD.TextColor3 = Color3.fromRGB(0, 0, 0)
+AD.TextSize = 14.000
+
+WS.Name = "WS"
+WS.Parent = dashcancelpc
+WS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WS.BorderColor3 = Color3.fromRGB(0, 0, 0)
+WS.BorderSizePixel = 0
+WS.Position = UDim2.new(0, 0, 1, -60)
+WS.Size = UDim2.new(0, 150, 0, 30)
+WS.Font = Enum.Font.SourceSans
+WS.Text = "W/S dash:0"
+WS.TextColor3 = Color3.fromRGB(0, 0, 0)
+WS.TextSize = 14.000
+
+local function QRBZMZW_fake_script()
+	local script = Instance.new('LocalScript', Frame)
+
+	local Drag = script.Parent.Parent.Frame
+	gsCoreGui = game:GetService("CoreGui")
+	gsTween = game:GetService("TweenService")
+	local UserInputService = game:GetService("UserInputService")
+		local dragging
+		local dragInput
+		local dragStart
+		local startPos
+		local function update(input)
+			local delta = input.Position - dragStart
+			local dragTime = 0.04
+			local SmoothDrag = {}
+			SmoothDrag.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+			local dragSmoothFunction = gsTween:Create(Drag, TweenInfo.new(dragTime, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), SmoothDrag)
+			dragSmoothFunction:Play()
+		end
+		Drag.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+				dragging = true
+				dragStart = input.Position
+				startPos = Drag.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragging = false
+					end
+				end)
+			end
+		end)
+		Drag.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				dragInput = input
+			end
+		end)
+		UserInputService.InputChanged:Connect(function(input)
+			if input == dragInput and dragging and Drag.Size then
+				update(input)
+			end
+		end)
+	
+end
+coroutine.wrap(QRBZMZW_fake_script)()
+local function RWGXI_fake_script()
+	local script = Instance.new('LocalScript', go)
+
+	local o = 0 
+	local fd = 0
+	local txt = script.Parent
+	local UserInputService = game:GetService("UserInputService")
+	local ply = workspace.Live:WaitForChild(game.Players.LocalPlayer.Name)
+	script.Parent.MouseButton1Click:Connect(function()
+		if o == 1 then
+			o = 0
+			txt.TextColor3 = Color3.fromRGB(255,0,0)
+			txt.Text = "Enable: False"
+		else
+			o = 1
+			txt.TextColor3	 = Color3.fromRGB(0,255,0)
+			txt.Text = "Enable: True"
+		end 
+	end)
+	local function fDash()
+		fd=1
+		local fp = Instance.new("Part",workspace)
+		fp.Anchored=true
+		fp.CanCollide = false
+		fp.Transparency = 1
+		fp.CFrame = ply.HumanoidRootPart.CFrame * CFrame.new(30,0,0)
+		
+		local anim = Instance.new("Animation")
+		anim.AnimationId = "rbxassetid://10480793962"
+	
+		local attach = Instance.new("Attachment",ply.HumanoidRootPart)
+	
+		local LinearVelocity = Instance.new("LinearVelocity",attach)
+	
+		local part = Instance.new("Part",workspace)
+		part.Anchored = true
+		part.CanCollide = false
+		part.Transparency = 1
+		part.CFrame = ply.HumanoidRootPart.CFrame * CFrame.new(30,0,0)
+	
+		local animplay = ply.Humanoid:LoadAnimation(anim)
+		animplay:Play()
+	
+		LinearVelocity.MaxForce = 9999999
+		LinearVelocity.VectorVelocity = (part.Position-ply.HumanoidRootPart.Position).Unit*Vector3.new(200,0,200)
+		LinearVelocity.Attachment0 = attach
+		wait(0.1)
+		attach:Destroy()
+		part:Destroy()
+		LinearVelocity:Destroy()
+		fd=0
+		wait(.05)
+		for i,a in pairs(ply:GetDescendants()) do
+			if a:IsA("Part") then
+			a.AssemblyLinearVelocity = Vector3.new(0,0,0)
+			end
+		end
+		ply.HumanoidRootPart.CFrame=fp.CFrame
+		fp:Destroy()
+	end
+	UserInputService.InputBegan:Connect(function(input, _gameProcessed)
+		if input.KeyCode == Enum.KeyCode.E then
+			if o == 1 then
+				o = 0
+				txt.TextColor3 = Color3.fromRGB(255,0,0)
+				txt.Text = "Enable: False"
+			else
+				o = 1
+				txt.TextColor3	 = Color3.fromRGB(0,255,0)
+				txt.Text = "Enable: True"
+			end 
+	
+		end
+	end)
+	local player = game.Players.LocalPlayer 
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+	local function onAnimationPlayed(animationTrack)
+		if o == 1 and fd ~= 1 then
+			if animationTrack.Animation.AnimationId == "rbxassetid://10480796021" then 
+				local p = game.Players.LocalPlayer 
+				local Humanoid = p.Character:WaitForChild("Humanoid")
+				for _,animTrack in pairs(Humanoid:GetPlayingAnimationTracks())do 
+          game.Players.LocalPlayer.PlayerGui.Emotes.ImageLabel.Visible = true
+					wait(.02)
+					animTrack:Stop()
+          game.Players.LocalPlayer.PlayerGui.Emotes.ImageLabel.Visible = false
+				end 
+			end 
+			if animationTrack.Animation.AnimationId == "rbxassetid://10480793962" then 
+				local p = game.Players.LocalPlayer 
+				local Humanoid = p.Character:WaitForChild("Humanoid")
+				for _,animTrack in pairs(Humanoid:GetPlayingAnimationTracks())do 
+          game.Players.LocalPlayer.PlayerGui.Emotes.ImageLabel.Visible = true
+					wait(.02)
+					animTrack:Stop()
+          game.Players.LocalPlayer.PlayerGui.Emotes.ImageLabel.Visible = false
+				end 
+			end
+		end
+	end 
+	humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+	UserInputService.InputBegan:Connect(function(input, _gameProcessed)
+		if input.KeyCode == Enum.KeyCode.C then
+			if o == 1 then
+				fDash()
+			end 
+		end
+	end)
+	
+	game.StarterGui:SetCore("SendNotification", {Title = "Made by",Text = "Fuzruoycpu :)"})
+end
+coroutine.wrap(RWGXI_fake_script)()
+local function BBXFTIC_fake_script()
+	local script = Instance.new('LocalScript', AD)
+
+	local col = 0
+	local txt = 0
+	local player = game.Players.LocalPlayer 
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+	local function onAnimationPlayed(animationTrack)
+		if animationTrack.Animation.AnimationId == "rbxassetid://10480796021" then 
+			col = 15
+			script.Parent.Text = "A/D dash: "..col/10
+		end
+		if animationTrack.Animation.AnimationId == "rbxassetid://10480793962" then 
+			col = 15
+			script.Parent.Text = "A/D dash: "..col/10
+		end
+	end
+	humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+	while wait()do
+		if col>0 then
+			wait(.1)
+			col=col-1
+			math.round(col)
+			txt=col/10
+			script.Parent.Text = "A/D dash: "..txt
+		end
+	end
+end
+coroutine.wrap(BBXFTIC_fake_script)()
+local function KFHTZL_fake_script()
+	local script = Instance.new('LocalScript', WS)
+
+	local col = 0
+	local txt = 0
+	local player = game.Players.LocalPlayer 
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+	local function onAnimationPlayed(animationTrack)
+		if animationTrack.Animation.AnimationId == "rbxassetid://10479335397" or animationTrack.Animation.AnimationId == "rbxassetid://13380255751" then 
+			col =32
+			script.Parent.Text = "W/S dash: "..col/10
+		end
+		if animationTrack.Animation.AnimationId == "rbxassetid://10491993682" then 
+			col = 32
+			script.Parent.Text = "W/S dash: "..col/10
+		end
+	end
+	humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+	while wait()do
+		if col>0 then
+			wait(.1)
+			col=col-1
+			math.round(col)
+			txt=col/10
+			script.Parent.Text = "W/S dash: "..txt
+		end
+	end
+end
+coroutine.wrap(KFHTZL_fake_script)()
