@@ -19,7 +19,7 @@ emable.Position = UDim2.new(-0.00097965484, 0, 0.577355981, 0)
 emable.Size = UDim2.new(0, 79, 0, 76)
 
 go.Name = "go"
-go.Parent = emable
+go.Parent = Frame
 go.BackgroundColor3 = Color3.fromRGB(139, 139, 139)
 go.BorderColor3 = Color3.fromRGB(0, 0, 0)
 go.BorderSizePixel = 0
@@ -31,26 +31,26 @@ go.TextColor3 = Color3.fromRGB(255, 0, 0)
 go.TextSize = 14.000
 
 AD.Name = "AD"
-AD.Parent = dashcancelphone
+AD.Parent = dashcancelpc
 AD.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 AD.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AD.BorderSizePixel = 0
 AD.Position = UDim2.new(0, 0, 1, -30)
-AD.Size = UDim2.new(0, 67, 0, 30)
+AD.Size = UDim2.new(0, 150, 0, 30)
 AD.Font = Enum.Font.SourceSans
-AD.Text = "A/D dash: 0"
+AD.Text = "A/D dash:0"
 AD.TextColor3 = Color3.fromRGB(0, 0, 0)
 AD.TextSize = 14.000
 
 WS.Name = "WS"
-WS.Parent = dashcancelphone
+WS.Parent = dashcancelpc
 WS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 WS.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WS.BorderSizePixel = 0
 WS.Position = UDim2.new(0, 0, 1, -60)
-WS.Size = UDim2.new(0, 67, 0, 30)
+WS.Size = UDim2.new(0, 150, 0, 30)
 WS.Font = Enum.Font.SourceSans
-WS.Text = "W/S dash: 0"
+WS.Text = "W/S dash:0"
 WS.TextColor3 = Color3.fromRGB(0, 0, 0)
 WS.TextSize = 14.000
 
