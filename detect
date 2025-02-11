@@ -1,15 +1,5 @@
-local UserInputService = game:GetService("UserInputService")
-local record = record
-if record = true then
-if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled and not UserInputService.MouseEnabled then
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/refs/heads/main/sdcPH-record"))()
-elseif not UserInputService.TouchEnabled and UserInputService.KeyboardEnabled and UserInputService.MouseEnabled then
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/refs/heads/main/sdcPC-record"))()
-end
-else
 if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled and not UserInputService.MouseEnabled then
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/refs/heads/main/sdcPH"))()
 elseif not UserInputService.TouchEnabled and UserInputService.KeyboardEnabled and UserInputService.MouseEnabled then
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/bhkxdcjkhgfdjiuhgjihgfhjkh/a/refs/heads/main/sdcPC"))()
-end
 end
