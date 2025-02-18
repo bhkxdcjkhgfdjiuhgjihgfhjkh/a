@@ -329,7 +329,6 @@ if not part then
 	gj98.Name="exed" gj98.Anchored=true gj98.CanCollide=false gj98.Transparency=1 gj98.Size=Vector3.new(0.01,.01,.01)gj98.Position=Vector3.new(5000,5000,5000)
 end
 function e1Spawn()
-	if part then
 	local e1 = Instance.new("Part",workspace)e1.Name = "Entity1" e1.Size = Vector3.new(1,5,2)e1.Transparency = 1 e1.Anchored = true
 	local bgui = Instance.new("BillboardGui")bgui.Size = UDim2.new(7.5,0,10.25,0)bgui.Adornee = e1 bgui.Parent = e1
 	local il = Instance.new("ImageLabel")il.Size = UDim2.new(1,0,1,0)il.Image = "rbxassetid://11285916518" il.Parent = bgui il.BackgroundTransparency = 1
@@ -337,7 +336,6 @@ function e1Spawn()
 	
 	wait(math.random(10,15))
 	e1:Destroy()
-	end
 end
 wait(5)
 while canSpawn==1 do
