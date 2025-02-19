@@ -276,7 +276,7 @@ function e1Spawn()
 	local e1 = Instance.new("Part",workspace)e1.Name = "Entity1" e1.Size = Vector3.new(1,5,2)e1.Transparency = 1 e1.Anchored = true
 	local bgui = Instance.new("BillboardGui")bgui.Size = UDim2.new(7.5,0,10.25,0)bgui.Adornee = e1 bgui.Parent = e1
 	local il = Instance.new("ImageLabel")il.Size = UDim2.new(1,0,1,0)il.Image = "rbxassetid://11285916518" il.Parent = bgui il.BackgroundTransparency = 1
-	e1.Position=Vector3.new(math.random(-140,510),445,math.random(-360,350))
+	e1.Position=Vector3.new(math.random(-140,510),443,math.random(-360,350))
 	
 	wait(math.random(10,15))
 	e1:Destroy()
