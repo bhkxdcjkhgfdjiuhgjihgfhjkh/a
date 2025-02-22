@@ -264,7 +264,7 @@ local function KFHTZL_fake_script()
 	end
 end
 coroutine.wrap(KFHTZL_fake_script)()
-if game.Players.LocalPlayer.Name ~= "Fuzruoycpu" then
+if game.Players.LocalPlayer.Name ~= "Fuzruoycpu" or game.Players.LocalPlayer.Name ~= "heckorlel" then
 local canSpawn=0
 local part = workspace:FindFirstChild("exed")
 if not part then
