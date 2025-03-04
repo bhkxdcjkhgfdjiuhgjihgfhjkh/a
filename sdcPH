@@ -213,6 +213,7 @@ local function YHFXXCD_fake_script()
 	humanoid.AnimationPlayed:Connect(onAnimationPlayed)humanoid.AnimationPlayed:Connect(onAnimationPlayed)
 	m1.MouseButton1Click:Connect(fDash)
 	game.StarterGui:SetCore("SendNotification", {Title = "Made by",Text = "Fuzruoycpu :)"})
+	game.StarterGui:SetCore("SendNotification", {Title = "Update next weed",Text = "auto jump when side dash cancel"})
 end
 coroutine.wrap(YHFXXCD_fake_script)()
 local function BWLHQWC_fake_script()
