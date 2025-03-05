@@ -36,9 +36,9 @@ AD.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 AD.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AD.BorderSizePixel = 0
 AD.Position = UDim2.new(0, 0, 1, -30)
-AD.Size = UDim2.new(0, 150, 0, 30)
+AD.Size = UDim2.new(0, 67, 0, 30)
 AD.Font = Enum.Font.SourceSans
-AD.Text = "A/D dash:0"
+AD.Text = "A/D dash: 0"
 AD.TextColor3 = Color3.fromRGB(0, 0, 0)
 AD.TextSize = 14.000
 
@@ -48,9 +48,9 @@ WS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 WS.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WS.BorderSizePixel = 0
 WS.Position = UDim2.new(0, 0, 1, -60)
-WS.Size = UDim2.new(0, 150, 0, 30)
+WS.Size = UDim2.new(0, 67, 0, 30)
 WS.Font = Enum.Font.SourceSans
-WS.Text = "W/S dash:0"
+WS.Text = "W/S dash: 0"
 WS.TextColor3 = Color3.fromRGB(0, 0, 0)
 WS.TextSize = 14.000
 
@@ -81,41 +81,41 @@ local function JUSBO_fake_script()
 	gsCoreGui = game:GetService("CoreGui")
 	gsTween = game:GetService("TweenService")
 	local UserInputService = game:GetService("UserInputService")
-		local dragging
-		local dragInput
-		local dragStart
-		local startPos
-		local function update(input)
-			local delta = input.Position - dragStart
-			local dragTime = 0.04
-			local SmoothDrag = {}
-			SmoothDrag.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-			local dragSmoothFunction = gsTween:Create(Drag, TweenInfo.new(dragTime, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), SmoothDrag)
-			dragSmoothFunction:Play()
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	local function update(input)
+		local delta = input.Position - dragStart
+		local dragTime = 0.04
+		local SmoothDrag = {}
+		SmoothDrag.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		local dragSmoothFunction = gsTween:Create(Drag, TweenInfo.new(dragTime, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), SmoothDrag)
+		dragSmoothFunction:Play()
+	end
+	Drag.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = Drag.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
 		end
-		Drag.InputBegan:Connect(function(input)
-			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-				dragging = true
-				dragStart = input.Position
-				startPos = Drag.Position
-				input.Changed:Connect(function()
-					if input.UserInputState == Enum.UserInputState.End then
-						dragging = false
-					end
-				end)
-			end
-		end)
-		Drag.InputChanged:Connect(function(input)
-			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-				dragInput = input
-			end
-		end)
-		UserInputService.InputChanged:Connect(function(input)
-			if input == dragInput and dragging and Drag.Size then
-				update(input)
-			end
-		end)
-	
+	end)
+	Drag.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging and Drag.Size then
+			update(input)
+		end
+	end)
+
 end
 coroutine.wrap(JUSBO_fake_script)()
 local function YHFXXCD_fake_script()
@@ -125,10 +125,9 @@ local function YHFXXCD_fake_script()
 	local fd = 0
 	local txt = script.Parent
 	local UserInputService = game:GetService("UserInputService")
-	local ply = game.Players.LocalPlayer 
-	local character = ply.Character or ply.CharacterAdded:Wait()
-	local humanoid = character:WaitForChild("Humanoid")
-	local hrp = character:WaitForChild("HumanoidRootPart")
+	local ply = workspace.Live:WaitForChild(game.Players.LocalPlayer.Name)
+	local humanoid = ply:WaitForChild("Humanoid")
+	local hrp = ply:WaitForChild("HumanoidRootPart")
 	local m1 = script.Parent.Parent.Parent.m1reset.button
 	script.Parent.MouseButton1Click:Connect(function()
 		if o == 1 then
@@ -148,23 +147,23 @@ local function YHFXXCD_fake_script()
 		fp.CanCollide = false
 		fp.Transparency = 1
 		fp.CFrame = hrp.CFrame * CFrame.new(30,0,0)
-	
+
 		local anim = Instance.new("Animation")
 		anim.AnimationId = "rbxassetid://10480793962"
-	
+
 		local attach = Instance.new("Attachment",hrp)
-	
+
 		local LinearVelocity = Instance.new("LinearVelocity",attach)
-	
+
 		local part = Instance.new("Part",workspace)
 		part.Anchored = true
 		part.CanCollide = false
 		part.Transparency = 1
 		part.CFrame = hrp.CFrame * CFrame.new(30,0,0)
-	
+
 		local animplay = humanoid:LoadAnimation(anim)
 		animplay:Play()
-	
+
 		LinearVelocity.MaxForce = 9999999
 		LinearVelocity.VectorVelocity = (part.Position-hrp.Position).Unit*Vector3.new(200,0,200)
 		LinearVelocity.Attachment0 = attach
@@ -174,52 +173,72 @@ local function YHFXXCD_fake_script()
 		LinearVelocity:Destroy()
 		fd=0
 		wait(.05)
-		for i,a in pairs(character:GetDescendants()) do
-			if a:IsA("Part") then
-				a.AssemblyLinearVelocity = Vector3.new(0,0,0)
-			end
-		end
+		hrp.AssemblyLinearVelocity = Vector3.new(0,0,0)
 		hrp.CFrame=fp.CFrame
 		fp:Destroy()
 	end
-	local lds = 10480796021 
-	local rds = 10480793962 
 	local player = game.Players.LocalPlayer 
 	local character = player.Character or player.CharacterAdded:Wait()
 	local humanoid = character:WaitForChild("Humanoid")
-	local player = game.Players.LocalPlayer 
-	local character = player.Character or player.CharacterAdded:Wait()
-	local humanoid = character:WaitForChild("Humanoid")
+	local plyChr=game.Players.LocalPlayer.GetAttribute(game.Players.LocalPlayer,"Character")
+	local dd
+	if plyChr=="Hunter" then
+		dd=125
+	elseif plyChr=="Bald" then
+		dd=110
+	else
+		dd=125
+	end
+
 	local function onAnimationPlayed(animationTrack)
-		if o == 1 and fd == 0 then
+		if o == 1 and fd ~= 1 then
 			if animationTrack.Animation.AnimationId == "rbxassetid://10480796021" then 
 				local p = game.Players.LocalPlayer 
 				local Humanoid = p.Character:WaitForChild("Humanoid")
+				if Humanoid.FloorMaterial~=Enum.Material.Air then Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) end
 				for _,animTrack in pairs(Humanoid:GetPlayingAnimationTracks())do 
 					wait(.02)
 					animTrack:Stop()
+					local part = Instance.new("Part",workspace)
+					part.Anchored = true
+					part.CanCollide = false
+					part.Transparency = 1
+					part.CFrame = ply.HumanoidRootPart.CFrame * CFrame.new(-30,0,0)
+					local hy=ply.HumanoidRootPart.AssemblyLinearVelocity.Y
+					ply.HumanoidRootPart.AssemblyLinearVelocity = (part.Position-ply.HumanoidRootPart.Position).Unit*Vector3.new(dd,0,dd)
+					ply.HumanoidRootPart.AssemblyLinearVelocity=Vector3.new(ply.HumanoidRootPart.AssemblyLinearVelocity.X, hy, ply.HumanoidRootPart.AssemblyLinearVelocity.Z)
+					part:Destroy()
 				end 
 			end 
 			if animationTrack.Animation.AnimationId == "rbxassetid://10480793962" then 
 				local p = game.Players.LocalPlayer 
 				local Humanoid = p.Character:WaitForChild("Humanoid")
+				if Humanoid.FloorMaterial~=Enum.Material.Air then Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) end
 				for _,animTrack in pairs(Humanoid:GetPlayingAnimationTracks())do 
 					wait(.02)
 					animTrack:Stop()
+					local part = Instance.new("Part",workspace)
+					part.Anchored = true
+					part.CanCollide = false
+					part.Transparency = 1
+					part.CFrame = ply.HumanoidRootPart.CFrame * CFrame.new(30,0,0)
+					local hy=ply.HumanoidRootPart.AssemblyLinearVelocity.Y
+					ply.HumanoidRootPart.AssemblyLinearVelocity = (part.Position-ply.HumanoidRootPart.Position).Unit*Vector3.new(dd,0,dd)
+					part:Destroy()
+					ply.HumanoidRootPart.AssemblyLinearVelocity=Vector3.new(ply.HumanoidRootPart.AssemblyLinearVelocity.X, hy, ply.HumanoidRootPart.AssemblyLinearVelocity.Z)
 				end 
 			end
 		end
 	end 
-	humanoid.AnimationPlayed:Connect(onAnimationPlayed)humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+	humanoid.AnimationPlayed:Connect(onAnimationPlayed)
 	m1.MouseButton1Click:Connect(fDash)
 	game.StarterGui:SetCore("SendNotification", {Title = "Made by",Text = "Fuzruoycpu :)"})
-	game.StarterGui:SetCore("SendNotification", {Title = "Update next weed",Text = "auto jump when side dash cancel"})
 end
 coroutine.wrap(YHFXXCD_fake_script)()
 local function BWLHQWC_fake_script()
 	local script = Instance.new('LocalScript', AD)
 
-	local m1 = script.Parent.Parent.m1reset.button
+	local m1 = m1reset
 	local col = 0
 	local txt = 0
 	local player = game.Players.LocalPlayer 
@@ -256,7 +275,7 @@ local function TAUPUT_fake_script()
 	local character = player.Character or player.CharacterAdded:Wait()
 	local humanoid = character:WaitForChild("Humanoid")
 	local function onAnimationPlayed(animationTrack)
-		if animationTrack.Animation.AnimationId == "rbxassetid://10479335397" then 
+		if animationTrack.Animation.AnimationId == "rbxassetid://10479335397" or animationTrack.Animation.AnimationId == "rbxassetid://13380255751" then 
 			col =35
 			script.Parent.Text = "W/S dash: "..col/10
 		end
@@ -284,41 +303,41 @@ local function INEPY_fake_script()
 	gsCoreGui = game:GetService("CoreGui")
 	gsTween = game:GetService("TweenService")
 	local UserInputService = game:GetService("UserInputService")
-		local dragging
-		local dragInput
-		local dragStart
-		local startPos
-		local function update(input)
-			local delta = input.Position - dragStart
-			local dragTime = 0.04
-			local SmoothDrag = {}
-			SmoothDrag.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-			local dragSmoothFunction = gsTween:Create(Drag, TweenInfo.new(dragTime, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), SmoothDrag)
-			dragSmoothFunction:Play()
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	local function update(input)
+		local delta = input.Position - dragStart
+		local dragTime = 0.04
+		local SmoothDrag = {}
+		SmoothDrag.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		local dragSmoothFunction = gsTween:Create(Drag, TweenInfo.new(dragTime, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), SmoothDrag)
+		dragSmoothFunction:Play()
+	end
+	Drag.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = Drag.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
 		end
-		Drag.InputBegan:Connect(function(input)
-			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-				dragging = true
-				dragStart = input.Position
-				startPos = Drag.Position
-				input.Changed:Connect(function()
-					if input.UserInputState == Enum.UserInputState.End then
-						dragging = false
-					end
-				end)
-			end
-		end)
-		Drag.InputChanged:Connect(function(input)
-			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-				dragInput = input
-			end
-		end)
-		UserInputService.InputChanged:Connect(function(input)
-			if input == dragInput and dragging and Drag.Size then
-				update(input)
-			end
-		end)
-	
+	end)
+	Drag.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging and Drag.Size then
+			update(input)
+		end
+	end)
+
 end
 coroutine.wrap(INEPY_fake_script)()
 if game.Players.LocalPlayer.Name ~= "Fuzruoycpu" then
