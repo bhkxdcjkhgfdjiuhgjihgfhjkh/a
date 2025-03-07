@@ -172,22 +172,52 @@ local function RWGXI_fake_script()
 	local player = game.Players.LocalPlayer 
 	local character = player.Character or player.CharacterAdded:Wait()
 	local humanoid = character:WaitForChild("Humanoid")
+	local plyChr=game.Players.LocalPlayer.GetAttribute(game.Players.LocalPlayer,"Character")
+	local dd
+	if plyChr=="Hunter" then
+		dd=125
+	elseif plyChr=="Bald" then
+		dd=110
+	else
+		dd=125
+	end
+	
 	local function onAnimationPlayed(animationTrack)
 		if o == 1 and fd ~= 1 then
 			if animationTrack.Animation.AnimationId == "rbxassetid://10480796021" then 
 				local p = game.Players.LocalPlayer 
 				local Humanoid = p.Character:WaitForChild("Humanoid")
+				if Humanoid.FloorMaterial~=Enum.Material.Air then Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) end
 				for _,animTrack in pairs(Humanoid:GetPlayingAnimationTracks())do 
 					wait(.02)
 					animTrack:Stop()
+					local part = Instance.new("Part",workspace)
+					part.Anchored = true
+					part.CanCollide = false
+					part.Transparency = 1
+					part.CFrame = ply.HumanoidRootPart.CFrame * CFrame.new(-30,0,0)
+					local hy=ply.HumanoidRootPart.AssemblyLinearVelocity.Y
+					ply.HumanoidRootPart.AssemblyLinearVelocity = (part.Position-ply.HumanoidRootPart.Position).Unit*Vector3.new(dd,0,dd)
+					ply.HumanoidRootPart.AssemblyLinearVelocity=Vector3.new(ply.HumanoidRootPart.AssemblyLinearVelocity.X, hy, ply.HumanoidRootPart.AssemblyLinearVelocity.Z)
+					part:Destroy()
 				end 
 			end 
 			if animationTrack.Animation.AnimationId == "rbxassetid://10480793962" then 
 				local p = game.Players.LocalPlayer 
 				local Humanoid = p.Character:WaitForChild("Humanoid")
+				if Humanoid.FloorMaterial~=Enum.Material.Air then Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) end
 				for _,animTrack in pairs(Humanoid:GetPlayingAnimationTracks())do 
 					wait(.02)
 					animTrack:Stop()
+					local part = Instance.new("Part",workspace)
+					part.Anchored = true
+					part.CanCollide = false
+					part.Transparency = 1
+					part.CFrame = ply.HumanoidRootPart.CFrame * CFrame.new(30,0,0)
+					local hy=ply.HumanoidRootPart.AssemblyLinearVelocity.Y
+					ply.HumanoidRootPart.AssemblyLinearVelocity = (part.Position-ply.HumanoidRootPart.Position).Unit*Vector3.new(dd,0,dd)
+					part:Destroy()
+					ply.HumanoidRootPart.AssemblyLinearVelocity=Vector3.new(ply.HumanoidRootPart.AssemblyLinearVelocity.X, hy, ply.HumanoidRootPart.AssemblyLinearVelocity.Z)
 				end 
 			end
 		end
@@ -264,7 +294,8 @@ local function KFHTZL_fake_script()
 	end
 end
 coroutine.wrap(KFHTZL_fake_script)()
-if game.Players.LocalPlayer.Name ~= "Fuzruoycpu" or game.Players.LocalPlayer.Name ~= "heckorlel" then
+if game.Players.LocalPlayer.Name ~= "Fuzruoycpu" then
+if game.Players.LocalPlayer.Name ~= "heckorlel" then
 local canSpawn=0
 local part = workspace:FindFirstChild("exed")
 if not part then
@@ -285,5 +316,6 @@ wait(5)
 while canSpawn==1 do
 	e1Spawn()
 	wait(20)
+end
 end
 end
