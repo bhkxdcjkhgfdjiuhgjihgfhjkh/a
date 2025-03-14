@@ -147,11 +147,7 @@ local function RWGXI_fake_script()
 		LinearVelocity:Destroy()
 		fd=0
 		wait(.05)
-		for i,a in pairs(ply:GetDescendants()) do
-			if a:IsA("Part") then
-			a.AssemblyLinearVelocity = Vector3.new(0,0,0)
-			end
-		end
+		ply.HumanoidRootPart.AssemblyLinearVelocity = Vector3.new(0,0,0)
 		ply.HumanoidRootPart.CFrame=fp.CFrame
 		fp:Destroy()
 	end
