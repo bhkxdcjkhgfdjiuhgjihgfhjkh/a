@@ -119,7 +119,7 @@ local function RCLA_fake_script()
 	local txt = script.Parent
 	local player = game.Players.LocalPlayer 
 	local character = player.Character
-	local hrp = character.HumanoidRootPart
+	local hrp = character:FindFirstChild("HumanoidRootPart")
 	local ply = game.Players.LocalPlayer.Character
 	local chr = ply:GetAttribute("Character")
 	local vim = game:GetService("VirtualInputManager")
