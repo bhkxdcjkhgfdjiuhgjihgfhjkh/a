@@ -1,0 +1,160 @@
+local lockIn = Instance.new("ScreenGui")
+	local Frame = Instance.new("Frame")
+	local button = Instance.new("TextButton")
+	
+	lockIn.Name = "lockIn"
+	lockIn.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	lockIn.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	
+	Frame.Parent = lockIn
+	Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Frame.BorderSizePixel = 0
+	Frame.Position = UDim2.new(-0.000218619316, 0, 0.421485573, 0)
+	Frame.Size = UDim2.new(0, 79, 0, 76)
+	
+	button.Name = "button"
+	button.Parent = Frame
+	button.BackgroundColor3 = Color3.fromRGB(139, 139, 139)
+	button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	button.BorderSizePixel = 0
+	button.Position = UDim2.new(-0.0229055192, 0, 0.337382466, 0)
+	button.Size = UDim2.new(0, 80, 0, 50)
+	button.Font = Enum.Font.SourceSans
+	button.Text = "ENABLE: false"
+	button.TextColor3 = Color3.fromRGB(255, 0, 0)
+	button.TextSize = 14.000
+	
+	local function sc1()
+		local script = Instance.new('LocalScript', button)
+	
+		local UserInputService = game:GetService("UserInputService")
+	local Players = game:GetService("Players")
+	local ply = Players.LocalPlayer
+	local txt = script.Parent
+	local chr = ply.Character
+	local hrp = chr:FindFirstChild("HumanoidRootPart")
+	local humanoid = chr:FindFirstChild("Humanoid")
+	local vim = game:GetService("VirtualInputManager")
+	local o = false
+	local float = Instance.new("Part",workspace)
+	--local timer = -1
+	local targetAnimations = {
+		["rbxassetid://10479335397"] = true,
+		["rbxassetid://13380255751"] = true
+	}
+	float.Anchored=true
+	float.Size=Vector3.new(1, 1, 1)
+	float.CanCollide=false
+	
+	local function decode(inputString)
+		local parts = {}
+		for part in string.gmatch(inputString, "([^;]+)") do
+			table.insert(parts, part)
+		end
+		return parts[1]
+	end
+	humanoid.Died:Connect(function()
+		o=false
+		if renderConn then
+			renderConn:Disconnect()
+		end
+	end)
+	local function lookUp(hrp:BasePart,thrp:BasePart)--[[
+		if hrp.Position.Y - thrp.Position.Y > 10 then 
+			addY=-5
+			hrp.Velocity=hrp.Velocity-Vector3.new(0, 200, 0)
+		else]]
+			addY=1.5
+		--end
+		local idk=0.5
+		float.Position=Vector3.new(hrp.Position.X,thrp.Position.Y,hrp.Position.Z)
+		if math.abs(thrp.Position.X-hrp.Position.X)>=idk or math.abs(thrp.Position.Z-hrp.Position.Z)>=idk then
+
+			hrp.CFrame =CFrame.lookAt(hrp.Position,Vector3.new(thrp.Position.X,hrp.Position.Y+addY,thrp.Position.Z))
+		end
+	end
+	
+	-- Toggle logic for button and R key
+	local stoppedConn
+	local renderConn=false
+	local function setToggle(state)
+		o = state
+		if o then
+			txt.TextColor3 = Color3.fromRGB(0, 255, 0)
+			txt.Text = "Enable: True"
+		else
+			txt.TextColor3 = Color3.fromRGB(255, 0, 0)
+			txt.Text = "Enable: False"
+			if renderConn then
+				renderConn:Disconnect()
+			end
+			--timer = -1
+		end
+	end
+	
+	
+	txt.MouseButton1Click:Connect(function()
+		setToggle(not o)
+	end)
+	
+	UserInputService.InputBegan:Connect(function(input, gameProcessed)
+		if input.KeyCode == Enum.KeyCode.R and not gameProcessed then
+			setToggle(not o)
+		end
+	end)
+	
+	
+	-- Animation logic
+	humanoid.AnimationPlayed:Connect(function(animTrack)
+		if not o then return end
+		local animId = animTrack.Animation.AnimationId
+		if animId == "rbxassetid://12296113986" and o then
+			vim:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
+			lentha=true
+			animTrack:GetMarkerReachedSignal("finalslam"):Connect(function()
+				task.wait(0.05)
+				vim:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
+				vim:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
+				vim:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
+			end)
+		end
+		if targetAnimations[animId] then
+			local at=ply.Character:GetAttribute("LastM1Hitted")
+			if at==nil or at=="" then return end
+			local mat=decode(at)
+			local target=workspace.Live:FindFirstChild(mat)
+			target=target.HumanoidRootPart
+			-- Continuously apply look up while animation is playing
+			task.wait(0.1)
+			for i,v in pairs(target.Parent:GetDescendants()) do
+				if v:IsA("Part") then
+					v.CanCollide=false
+				end
+			end
+			workspace.Gravity=100
+			renderConn = game:GetService("RunService").RenderStepped:Connect(function()
+				lookUp(hrp,target)
+			end)
+			
+			stoppedConn = animTrack.Stopped:Connect(function()
+				if renderConn then
+					renderConn:Disconnect()
+					--ply.Character:SetAttribute("LastM1Hitted","")
+					--timer = -1
+					workspace.Gravity=192.8
+					lentha=false
+					for i,v in pairs(target.Parent:GetDescendants()) do
+						if v:IsA("Part") then
+							v.CanCollide=true
+						end
+					end
+				end
+			end)
+		end
+	end)
+	task.spawn(function()
+		game.StarterGui:SetCore("SendNotification", {Title = "Made by", Text = "Fuzruoycpu :)"})
+	end)
+	end
+	coroutine.wrap(sc1)()
