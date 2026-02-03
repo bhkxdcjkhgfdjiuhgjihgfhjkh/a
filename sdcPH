@@ -1,17 +1,19 @@
-local dashcancelphone = Instance.new("ScreenGui")
+local sdcMobile = Instance.new("ScreenGui")
 local emable = Instance.new("Frame")
 local go = Instance.new("TextButton")
 local AD = Instance.new("TextLabel")
 local WS = Instance.new("TextLabel")
 local m1reset = Instance.new("Frame")
 local button = Instance.new("TextButton")
+local Health = Instance.new("TextLabel")
+local abed=false
 
-dashcancelphone.Name = "dash cancel phone"
-dashcancelphone.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-dashcancelphone.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+sdcMobile.Name = "dash cancel phone"
+sdcMobile.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+sdcMobile.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 emable.Name = "emable"
-emable.Parent = dashcancelphone
+emable.Parent = sdcMobile
 emable.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 emable.BorderColor3 = Color3.fromRGB(0, 0, 0)
 emable.BorderSizePixel = 0
@@ -31,31 +33,31 @@ go.TextColor3 = Color3.fromRGB(255, 0, 0)
 go.TextSize = 14.000
 
 AD.Name = "AD"
-AD.Parent = dashcancelphone
+AD.Parent = sdcMobile
 AD.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 AD.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AD.BorderSizePixel = 0
 AD.Position = UDim2.new(0, 0, 1, -30)
-AD.Size = UDim2.new(0, 67, 0, 30)
+AD.Size = UDim2.new(0, 100, 0, 30)
 AD.Font = Enum.Font.SourceSans
 AD.Text = "A/D dash: 0"
 AD.TextColor3 = Color3.fromRGB(0, 0, 0)
 AD.TextSize = 14.000
 
 WS.Name = "WS"
-WS.Parent = dashcancelphone
+WS.Parent = sdcMobile
 WS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 WS.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WS.BorderSizePixel = 0
 WS.Position = UDim2.new(0, 0, 1, -60)
-WS.Size = UDim2.new(0, 67, 0, 30)
+WS.Size = UDim2.new(0, 100, 0, 30)
 WS.Font = Enum.Font.SourceSans
 WS.Text = "W/S dash: 0"
 WS.TextColor3 = Color3.fromRGB(0, 0, 0)
 WS.TextSize = 14.000
 
 m1reset.Name = "m1reset"
-m1reset.Parent = dashcancelphone
+m1reset.Parent = sdcMobile
 m1reset.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 m1reset.BorderColor3 = Color3.fromRGB(0, 0, 0)
 m1reset.BorderSizePixel = 0
@@ -73,6 +75,20 @@ button.Font = Enum.Font.SourceSans
 button.Text = "m1 Reset"
 button.TextColor3 = Color3.fromRGB(255, 255, 255)
 button.TextSize = 18.000
+
+Health.Parent = sdcMobile
+Health.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Health.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Health.BorderSizePixel = 0
+Health.BackgroundTransparency=1
+Health.TextStrokeColor3=Color3.new(1,1,1)
+Health.TextStrokeTransparency=0
+Health.Position = UDim2.new(0.47, 0, 0.45, 0)
+Health.Size = UDim2.new(0, 50, 0, 50)
+Health.Font = Enum.Font.SourceSans
+Health.Text = ""
+Health.TextColor3 = Color3.fromRGB(0, 0, 0)
+Health.TextSize = 25
 
 local function JUSBO_fake_script()
 	local script = Instance.new('LocalScript', emable)
@@ -123,11 +139,14 @@ local function YHFXXCD_fake_script()
 
 	local o = 0 
 	local fd = 0
+	local dd
 	local txt = script.Parent
-	local UserInputService = game:GetService("UserInputService")
-	local ply = workspace.Live:WaitForChild(game.Players.LocalPlayer.Name)
-	local humanoid = ply:WaitForChild("Humanoid")
+	local ply = game.Players.LocalPlayer.Character
+	local chr = ply:GetAttribute("Character")
+	local vim = game:GetService("VirtualInputManager")
+	local Humanoid = ply:WaitForChild("Humanoid")
 	local hrp = ply:WaitForChild("HumanoidRootPart")
+	local UserInputService = game:GetService("UserInputService")
 	local m1 = script.Parent.Parent.Parent.m1reset.button
 	local function decode(inputString)
 		if inputString=="" or inputString==nil then return nil else
@@ -175,8 +194,8 @@ local function YHFXXCD_fake_script()
 				part.CFrame = hrp.CFrame * CFrame.new(35,0,0)
 				fp.CFrame = hrp.CFrame * CFrame.new(35,0,0)
 			else
-				part.CFrame = hrp.CFrame * CFrame.new(30,0,0)
-				fp.CFrame = hrp.CFrame * CFrame.new(30,0,0)
+				part.CFrame = hrp.CFrame * CFrame.new(25,0,0)
+				fp.CFrame = hrp.CFrame * CFrame.new(25,0,0)
 			end
 			local animplay = h:LoadAnimation(anim)
 			animplay:Play()
@@ -208,14 +227,9 @@ local function YHFXXCD_fake_script()
 			end
 		end
 	end
-	local player = game.Players.LocalPlayer 
-	local character = player.Character or player.CharacterAdded:Wait()
-	local humanoid = character:WaitForChild("Humanoid")
-	local plyChr=game.Players.LocalPlayer.GetAttribute(game.Players.LocalPlayer,"Character")
-	local dd
-	if plyChr=="Hunter" then
+	if chr=="Hunter" then
 		dd=125
-	elseif plyChr=="Bald" then
+	elseif chr=="Bald" then
 		dd=110
 	else
 		dd=125
@@ -224,11 +238,15 @@ local function YHFXXCD_fake_script()
 	local function onAnimationPlayed(animationTrack)
 		if o == 1 and fd ~= 1 then
 			if animationTrack.Animation.AnimationId == "rbxassetid://10480796021" then 
-				local p = game.Players.LocalPlayer 
-				local Humanoid = p.Character:WaitForChild("Humanoid")
 				if Humanoid.FloorMaterial~=Enum.Material.Air then Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) end
 				for _,animTrack in pairs(Humanoid:GetPlayingAnimationTracks())do 
+					local target=ply:GetAttribute("LastM1Hitted")
 					wait(.02)
+					for i,v in pairs(ply) do
+						if v:IsA("BodyVelocity") then
+							v:Destroy()
+						end
+					end
 					animTrack:Stop()
 					local part = Instance.new("Part",workspace)
 					part.Anchored = true
@@ -242,11 +260,14 @@ local function YHFXXCD_fake_script()
 				end 
 			end 
 			if animationTrack.Animation.AnimationId == "rbxassetid://10480793962" then 
-				local p = game.Players.LocalPlayer 
-				local Humanoid = p.Character:WaitForChild("Humanoid")
 				if Humanoid.FloorMaterial~=Enum.Material.Air then Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) end
 				for _,animTrack in pairs(Humanoid:GetPlayingAnimationTracks())do 
 					wait(.02)
+					for i,v in pairs(ply) do
+						if v:IsA("BodyVelocity") then
+							v:Destroy()
+						end
+					end
 					animTrack:Stop()
 					local part = Instance.new("Part",workspace)
 					part.Anchored = true
@@ -255,13 +276,20 @@ local function YHFXXCD_fake_script()
 					part.CFrame = ply.HumanoidRootPart.CFrame * CFrame.new(30,0,0)
 					local hy=ply.HumanoidRootPart.AssemblyLinearVelocity.Y
 					ply.HumanoidRootPart.AssemblyLinearVelocity = (part.Position-ply.HumanoidRootPart.Position).Unit*Vector3.new(dd,0,dd)
-					part:Destroy()
 					ply.HumanoidRootPart.AssemblyLinearVelocity=Vector3.new(ply.HumanoidRootPart.AssemblyLinearVelocity.X, hy, ply.HumanoidRootPart.AssemblyLinearVelocity.Z)
+					part:Destroy()
 				end 
+			end
+			if animationTrack.Animation.AnimationId == "rbxassetid://15290930205" then 
+				local wall = Instance.new("Part",workspace)
+				wall.Transparency=.5
+				wall.Anchored=true wall.Size=Vector3.new(15, 8, 2)
+				wall.CFrame=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,0,10)
+				task.wait(1) wall:Destroy()
 			end
 		end
 	end 
-	humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+	Humanoid.AnimationPlayed:Connect(onAnimationPlayed)
 	m1.MouseButton1Click:Connect(fDash)
 	game.StarterGui:SetCore("SendNotification", {Title = "Made by",Text = "Fuzruoycpu :)"})
 end
