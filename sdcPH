@@ -242,11 +242,6 @@ local function YHFXXCD_fake_script()
 				for _,animTrack in pairs(Humanoid:GetPlayingAnimationTracks())do 
 					local target=ply:GetAttribute("LastM1Hitted")
 					wait(.02)
-					for i,v in pairs(ply) do
-						if v:IsA("BodyVelocity") then
-							v:Destroy()
-						end
-					end
 					animTrack:Stop()
 					local part = Instance.new("Part",workspace)
 					part.Anchored = true
@@ -263,11 +258,6 @@ local function YHFXXCD_fake_script()
 				if Humanoid.FloorMaterial~=Enum.Material.Air then Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) end
 				for _,animTrack in pairs(Humanoid:GetPlayingAnimationTracks())do 
 					wait(.02)
-					for i,v in pairs(ply) do
-						if v:IsA("BodyVelocity") then
-							v:Destroy()
-						end
-					end
 					animTrack:Stop()
 					local part = Instance.new("Part",workspace)
 					part.Anchored = true
