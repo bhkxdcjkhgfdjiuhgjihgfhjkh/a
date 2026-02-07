@@ -58,12 +58,6 @@
 			if renderConn then
 				renderConn:Disconnect()
 			end
-			if ld then
-				ld:Disconnect()
-			end
-			if ud then
-				ud:Disconnect()
-			end
 			o=false
 			--timer = -1
 		else
@@ -97,6 +91,7 @@
 				vim:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
 				vim:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
 				vim:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
+				ld:Disconnect()
 			end)
 		end
 		if animId == "rbxassetid://10503381238" and o==true then
@@ -104,6 +99,7 @@
 				task.wait()
 				vim:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
 				vim:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
+				ud:Disconnect()
 			end)
 		end
 		if targetAnimations[animId] then
