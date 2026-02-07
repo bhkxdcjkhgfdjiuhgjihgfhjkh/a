@@ -1,34 +1,4 @@
-local lockIn = Instance.new("ScreenGui")
-	local Frame = Instance.new("Frame")
-	local button = Instance.new("TextButton")
-	
-	lockIn.Name = "lockIn"
-	lockIn.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-	lockIn.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-	
-	Frame.Parent = lockIn
-	Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Frame.BorderSizePixel = 0
-	Frame.Position = UDim2.new(-0.000218619316, 0, 0.421485573, 0)
-	Frame.Size = UDim2.new(0, 79, 0, 76)
-	
-	button.Name = "button"
-	button.Parent = Frame
-	button.BackgroundColor3 = Color3.fromRGB(139, 139, 139)
-	button.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	button.BorderSizePixel = 0
-	button.Position = UDim2.new(-0.0229055192, 0, 0.337382466, 0)
-	button.Size = UDim2.new(0, 80, 0, 50)
-	button.Font = Enum.Font.SourceSans
-	button.Text = "ENABLE: false"
-	button.TextColor3 = Color3.fromRGB(255, 0, 0)
-	button.TextSize = 14.000
-	
-	local function sc1()
-		local script = Instance.new('LocalScript', button)
-	
-		local UserInputService = game:GetService("UserInputService")
+	local UserInputService = game:GetService("UserInputService")
 	local Players = game:GetService("Players")
 	local ply = Players.LocalPlayer
 	local txt = script.Parent
@@ -69,38 +39,48 @@ local lockIn = Instance.new("ScreenGui")
 		--end
 		local idk=0.5
 		float.Position=Vector3.new(hrp.Position.X,thrp.Position.Y,hrp.Position.Z)
-		if math.abs(thrp.Position.X-hrp.Position.X)>=idk or math.abs(thrp.Position.Z-hrp.Position.Z)>=idk then
-
+		local absx = math.abs(thrp.Position.X-hrp.Position.X)
+		local absz = math.abs(thrp.Position.Z-hrp.Position.Z)
+		if absx>=idk or absz>=idk then
 			hrp.CFrame =CFrame.lookAt(hrp.Position,Vector3.new(thrp.Position.X,hrp.Position.Y+addY,thrp.Position.Z))
 		end
 	end
 	
 	-- Toggle logic for button and R key
 	local stoppedConn
+	local ld
+	local ud
 	local renderConn=false
-	local function setToggle(state)
-		o = state
+	local function setToggle()
 		if o then
-			txt.TextColor3 = Color3.fromRGB(0, 255, 0)
-			txt.Text = "Enable: True"
-		else
 			txt.TextColor3 = Color3.fromRGB(255, 0, 0)
 			txt.Text = "Enable: False"
 			if renderConn then
 				renderConn:Disconnect()
 			end
+			if ld then
+				ld:Disconnect()
+			end
+			if ud then
+				ud:Disconnect()
+			end
+			o=false
 			--timer = -1
+		else
+			txt.TextColor3 = Color3.fromRGB(0, 255, 0)
+			txt.Text = "Enable: True"
+			o=true
 		end
 	end
 	
 	
 	txt.MouseButton1Click:Connect(function()
-		setToggle(not o)
+		setToggle()
 	end)
 	
 	UserInputService.InputBegan:Connect(function(input, gameProcessed)
 		if input.KeyCode == Enum.KeyCode.R and not gameProcessed then
-			setToggle(not o)
+			setToggle()
 		end
 	end)
 	
@@ -109,14 +89,21 @@ local lockIn = Instance.new("ScreenGui")
 	humanoid.AnimationPlayed:Connect(function(animTrack)
 		if not o then return end
 		local animId = animTrack.Animation.AnimationId
-		if animId == "rbxassetid://12296113986" and o then
+		if animId == "rbxassetid://12296113986" and o==true then
 			vim:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
 			lentha=true
-			animTrack:GetMarkerReachedSignal("finalslam"):Connect(function()
+			ld=animTrack:GetMarkerReachedSignal("finalslam"):Connect(function()
 				task.wait(0.05)
 				vim:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
 				vim:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
 				vim:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
+			end)
+		end
+		if animId == "rbxassetid://10503381238" and o==true then
+			ud=animTrack:GetMarkerReachedSignal("hitreg"):Connect(function()
+				task.wait()
+				vim:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
+				vim:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
 			end)
 		end
 		if targetAnimations[animId] then
@@ -152,7 +139,28 @@ local lockIn = Instance.new("ScreenGui")
 				end
 			end)
 		end
+	end)--[[
+	chr.AttributeChanged:Connect(function(attribute) 
+		if attribute == "LastM1Hitted" then
+			local at=ply.Character:GetAttribute(attribute)
+			if at~="" and at and at ~=nil then
+				timer=5
+			end
+		end
 	end)
+	coroutine.wrap(function()
+		while task.wait() do
+			if timer >= 0 then
+				timer-=0.1
+				task.wait(0.1)
+				if timer <= 0 then
+					wait()
+					ply.Character:SetAttribute("LastM1Hitted","")
+				end
+			end
+		end
+	end)()]]
+	-- Notification
 	task.spawn(function()
 		game.StarterGui:SetCore("SendNotification", {Title = "Made by", Text = "Fuzruoycpu :)"})
 	end)
