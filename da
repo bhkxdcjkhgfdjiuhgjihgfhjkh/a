@@ -87,12 +87,17 @@
 			vim:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
 			lentha=true
 			ld=animTrack:GetMarkerReachedSignal("finalslam"):Connect(function()
+				lentha=false
 				task.wait(0.05)
 				vim:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
 				vim:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
 				vim:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
 				ld:Disconnect()
 			end)
+			while lentha do
+				hrp:PivotTo(hrp.CFrame*CFrame.Angles(0,math.rad(30),0))
+				task.wait()
+			end
 		end
 		if animId == "rbxassetid://10503381238" and o==true then
 			ud=animTrack:GetMarkerReachedSignal("hitreg"):Connect(function()
@@ -101,6 +106,7 @@
 				vim:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
 				ud:Disconnect()
 			end)
+			
 		end
 		if targetAnimations[animId] then
 			local at=ply.Character:GetAttribute("LastM1Hitted")
