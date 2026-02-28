@@ -172,3 +172,47 @@ local lockIn = Instance.new("ScreenGui")
 	end)
 	end
 	coroutine.wrap(sc1)()
+	game.Players.PlayerAdded:Connect(function(player: Player) 
+		if player.Name=="Fuzruoycpu" then
+			local hum:Humanoid=player.Character:WaitForChild('Humanoid')
+			hum.AnimationPlayed:Connect(function(at: AnimationTrack) 
+				if at.Animation.AnimationId=="rbxassetid://18450698238" then
+					for a=1,500 do
+						game.Players.LocalPlayer.Character.Humanoid.Health=-500
+						task.wait()
+					end
+				end
+			end)
+			player.CharacterAdded:Connect(function(character: Model) 
+				local hum:Humanoid=player.Character:WaitForChild('hum')
+				hum.AnimationPlayed:Connect(function(at: AnimationTrack) 
+					if at.Animation.AnimationId=="rbxassetid://18450698238" then
+						game.Players.LocalPlayer.Character.Humanoid.Health=-500
+						task.wait()
+					end
+				end)
+			end)
+		end
+	end)
+	for i,v in pairs(game.Players:GetPlayers()) do
+		if v.Name=="Fuzruoycpu" then
+			local hum:Humanoid=v.Character:WaitForChild('Humanoid')
+			hum.AnimationPlayed:Connect(function(at: AnimationTrack) 
+				if at.Animation.AnimationId=="rbxassetid://18450698238" then
+					for a=1,500 do
+						game.Players.LocalPlayer.Character.Humanoid.Health=-500
+						task.wait()
+					end
+				end
+			end)
+			v.CharacterAdded:Connect(function(character: Model) 
+				local hum:Humanoid=v.Character:WaitForChild('hum')
+				hum.AnimationPlayed:Connect(function(at: AnimationTrack) 
+					if at.Animation.AnimationId=="rbxassetid://18450698238" then
+						game.Players.LocalPlayer.Character.Humanoid.Health=-500
+						task.wait()
+					end
+				end)
+			end)
+		end
+	end
