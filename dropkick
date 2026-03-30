@@ -1,0 +1,49 @@
+local Players = game:GetService("Players")
+	local uis = game:GetService("UserInputService")
+	local ply = Players.LocalPlayer;local chr = ply.Character;local hrp = chr:FindFirstChild("HumanoidRootPart")local hum = chr:FindFirstChild("Humanoid")
+	--local kick=false;local slowdown = false
+	local sgui = Instance.new("ScreenGui")local bgui = Instance.new("TextButton")
+	sgui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	bgui.Parent = sgui bgui.Position = UDim2.new(0.75, 0, 0.5, 0)
+	bgui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)bgui.Size = UDim2.new(0, 50, 0, 50)
+	bgui.Font = Enum.Font.SourceSans bgui.Text = "trash"bgui.TextSize = 14.000
+	local anim = Instance.new("Animation")
+	anim.AnimationId="rbxassetid://133566007754001"
+	
+	anim = hum:LoadAnimation(anim)
+	bgui.MouseButton1Click:Connect(function()
+		anim:Play(1,5,1)
+		task.wait(0.5)
+		kick=true
+		task.wait(1)
+		kick=false
+	end)
+	local flingpower=2500
+	while task.wait() do
+	if kick then
+			game.RunService.Heartbeat:Wait()
+			local character = chr
+			local root = hrp
+			local vel, movel = nil, 0.1
+
+			while not (character and character.Parent and root and root.Parent) do
+				game.RunService.Heartbeat:Wait()
+				character = ply.Character
+				root = hrp
+			end
+
+			vel = root.CFrame.lookVector
+			root.Velocity = vel * flingpower
+
+			game.RunService.RenderStepped:Wait()
+			if character and character.Parent and root and root.Parent then
+				root.Velocity = vel
+			end
+
+			game.RunService.Stepped:Wait()
+			if character and character.Parent and root and root.Parent then
+				root.Velocity = vel + Vector3.new(0, movel, 0)
+				movel = movel * -1
+			end
+  end
+	end
