@@ -21,29 +21,27 @@ local Players = game:GetService("Players")
 	local flingpower=2500
 	while task.wait() do
 	if kick then
+		game.RunService.Heartbeat:Wait()
+		local character = chr
+		local root = hrp
+		local vel, movel = nil, 0.1
+		while not (character and character.Parent and root and root.Parent) do
 			game.RunService.Heartbeat:Wait()
-			local character = chr
-			local root = hrp
-			local vel, movel = nil, 0.1
+			character = ply.Character
+			root = hrp
+		end
+		vel = root.CFrame.lookVector
+		root.Velocity = vel * flingpower
 
-			while not (character and character.Parent and root and root.Parent) do
-				game.RunService.Heartbeat:Wait()
-				character = ply.Character
-				root = hrp
-			end
+		game.RunService.RenderStepped:Wait()
+		if character and character.Parent and root and root.Parent then
+			root.Velocity = vel
+		end
 
-			vel = root.CFrame.lookVector
-			root.Velocity = vel * flingpower
-
-			game.RunService.RenderStepped:Wait()
-			if character and character.Parent and root and root.Parent then
-				root.Velocity = vel
-			end
-
-			game.RunService.Stepped:Wait()
-			if character and character.Parent and root and root.Parent then
-				root.Velocity = vel + Vector3.new(0, movel, 0)
-				movel = movel * -1
-			end
-  end
+		game.RunService.Stepped:Wait()
+		if character and character.Parent and root and root.Parent then
+			root.Velocity = vel + Vector3.new(0, movel, 0)
+			movel = movel * -1
+		end
 	end
+end
