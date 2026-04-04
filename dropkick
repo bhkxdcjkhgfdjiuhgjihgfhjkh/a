@@ -6,7 +6,7 @@ local Players = game:GetService("Players")
 	sgui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 	bgui.Parent = sgui bgui.Position = UDim2.new(0.75, 0, 0.5, 0)
 	bgui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)bgui.Size = UDim2.new(0, 50, 0, 50)
-	bgui.Font = Enum.Font.SourceSans bgui.Text = "trash"bgui.TextSize = 14.000
+	bgui.Font = Enum.Font.SourceSans bgui.Text = "kick"bgui.TextSize = 14.000
 	local anim = Instance.new("Animation")
 	anim.AnimationId="rbxassetid://133566007754001"
 	
