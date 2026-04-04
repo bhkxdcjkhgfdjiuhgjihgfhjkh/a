@@ -22,30 +22,54 @@ local TextButton_3 = Instance.new("TextButton")
 local UICorner_7 = Instance.new("UICorner")
 local UIPageLayout = Instance.new("UIPageLayout")
 local aimbot = Instance.new("Frame")
-local Frame = Instance.new("Frame")
+local tog_2 = Instance.new("Frame")
 local UICorner_8 = Instance.new("UICorner")
 local TextButton_4 = Instance.new("TextButton")
 local UICorner_9 = Instance.new("UICorner")
 local TextLabel_4 = Instance.new("TextLabel")
 local UIListLayout_2 = Instance.new("UIListLayout")
+local togKeyBind_2 = Instance.new("Frame")
 local UICorner_10 = Instance.new("UICorner")
+local TextLabel_5 = Instance.new("TextLabel")
+local TextButton_5 = Instance.new("TextButton")
 local UICorner_11 = Instance.new("UICorner")
+local audKeyBind = Instance.new("Frame")
+local UICorner_12 = Instance.new("UICorner")
+local TextLabel_6 = Instance.new("TextLabel")
+local TextButton_6 = Instance.new("TextButton")
+local UICorner_13 = Instance.new("UICorner")
+local dwait = Instance.new("Frame")
+local UICorner_14 = Instance.new("UICorner")
+local TextLabel_7 = Instance.new("TextLabel")
+local TextBox = Instance.new("TextBox")
+local UICorner_15 = Instance.new("UICorner")
+local addY = Instance.new("Frame")
+local UICorner_16 = Instance.new("UICorner")
+local TextLabel_8 = Instance.new("TextLabel")
+local TextBox_2 = Instance.new("TextBox")
+local UICorner_17 = Instance.new("UICorner")
+local UICorner_18 = Instance.new("UICorner")
+local UICorner_19 = Instance.new("UICorner")
 local Tabs = Instance.new("Frame")
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local m1reset_2 = Instance.new("TextButton")
-local UICorner_12 = Instance.new("UICorner")
+local UICorner_20 = Instance.new("UICorner")
 local aimbot_2 = Instance.new("TextButton")
-local UICorner_13 = Instance.new("UICorner")
+local UICorner_21 = Instance.new("UICorner")
 local UIListLayout_3 = Instance.new("UIListLayout")
-local UICorner_14 = Instance.new("UICorner")
+local UICorner_22 = Instance.new("UICorner")
 local lName = Instance.new("Frame")
-local UICorner_15 = Instance.new("UICorner")
-local TextLabel_5 = Instance.new("TextLabel")
+local UICorner_23 = Instance.new("UICorner")
+local TextLabel_9 = Instance.new("TextLabel")
+local m1resetTo = Instance.new("Frame")
+local aimbotTo = Instance.new("Frame")
+local AD = Instance.new("TextLabel")
+local WS = Instance.new("TextLabel")
 
 --Properties:
 
 zipGui.Name = "zipGui"
-zipGui.Parent = game:WaitForChild("CoreGui")
+zipGui.Parent = game.CoreGui
 zipGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 toggle.Name = "toggle"
@@ -226,16 +250,17 @@ aimbot.BorderSizePixel = 0
 aimbot.Position = UDim2.new(0, 0, 0.0434782617, 0)
 aimbot.Size = UDim2.new(1, 0, 0.913043499, 0)
 
-Frame.Parent = aimbot
-Frame.BackgroundColor3 = Color3.fromRGB(197, 197, 197)
-Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0.0270270277, 0, 0.0434782617, 0)
-Frame.Size = UDim2.new(0, 350, 0, 30)
+tog_2.Name = "tog"
+tog_2.Parent = aimbot
+tog_2.BackgroundColor3 = Color3.fromRGB(197, 197, 197)
+tog_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+tog_2.BorderSizePixel = 0
+tog_2.Position = UDim2.new(0.0270270277, 0, 0.0434782617, 0)
+tog_2.Size = UDim2.new(0, 350, 0, 30)
 
-UICorner_8.Parent = Frame
+UICorner_8.Parent = tog_2
 
-TextButton_4.Parent = Frame
+TextButton_4.Parent = tog_2
 TextButton_4.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
 TextButton_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_4.BorderSizePixel = 0
@@ -248,7 +273,7 @@ TextButton_4.TextSize = 14.000
 
 UICorner_9.Parent = TextButton_4
 
-TextLabel_4.Parent = Frame
+TextLabel_4.Parent = tog_2
 TextLabel_4.AnchorPoint = Vector2.new(0.5, 0.5)
 TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_4.BackgroundTransparency = 1.000
@@ -267,10 +292,158 @@ UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout_2.Padding = UDim.new(0, 10)
 
-UICorner_10.Parent = Sections
+togKeyBind_2.Name = "togKeyBind"
+togKeyBind_2.Parent = aimbot
+togKeyBind_2.BackgroundColor3 = Color3.fromRGB(197, 197, 197)
+togKeyBind_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+togKeyBind_2.BorderSizePixel = 0
+togKeyBind_2.Position = UDim2.new(0.0270270277, 0, 0.0434782617, 0)
+togKeyBind_2.Size = UDim2.new(0, 350, 0, 30)
 
-UICorner_11.CornerRadius = UDim.new(0, 15)
-UICorner_11.Parent = mainFrame
+UICorner_10.Parent = togKeyBind_2
+
+TextLabel_5.Parent = togKeyBind_2
+TextLabel_5.AnchorPoint = Vector2.new(0.5, 0.5)
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.BackgroundTransparency = 1.000
+TextLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_5.BorderSizePixel = 0
+TextLabel_5.Position = UDim2.new(0.342857152, 0, 0.5, 0)
+TextLabel_5.Size = UDim2.new(0, 200, 1, 0)
+TextLabel_5.Font = Enum.Font.SourceSans
+TextLabel_5.Text = "aimbot toggle key bind"
+TextLabel_5.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_5.TextSize = 14.000
+TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_5.Parent = togKeyBind_2
+TextButton_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_5.BorderSizePixel = 0
+TextButton_5.Position = UDim2.new(0.819999993, 0, 0.166999996, 0)
+TextButton_5.Size = UDim2.new(-0.0710000023, 75, 0.666999996, 0)
+TextButton_5.Font = Enum.Font.SourceSans
+TextButton_5.Text = "R"
+TextButton_5.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_5.TextSize = 14.000
+
+UICorner_11.Parent = TextButton_5
+
+audKeyBind.Name = "audKeyBind"
+audKeyBind.Parent = aimbot
+audKeyBind.BackgroundColor3 = Color3.fromRGB(197, 197, 197)
+audKeyBind.BorderColor3 = Color3.fromRGB(0, 0, 0)
+audKeyBind.BorderSizePixel = 0
+audKeyBind.Position = UDim2.new(0.0513513498, 0, 0.166666672, 0)
+audKeyBind.Size = UDim2.new(0, 350, 0, 30)
+
+UICorner_12.Parent = audKeyBind
+
+TextLabel_6.Parent = audKeyBind
+TextLabel_6.AnchorPoint = Vector2.new(0.5, 0.5)
+TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.BackgroundTransparency = 1.000
+TextLabel_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_6.BorderSizePixel = 0
+TextLabel_6.Position = UDim2.new(0.342857152, 0, 0.5, 0)
+TextLabel_6.Size = UDim2.new(0, 200, 1, 0)
+TextLabel_6.Font = Enum.Font.SourceSans
+TextLabel_6.Text = "auto uppercut dash key bind"
+TextLabel_6.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_6.TextSize = 14.000
+TextLabel_6.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_6.Parent = audKeyBind
+TextButton_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_6.BorderSizePixel = 0
+TextButton_6.Position = UDim2.new(0.819999993, 0, 0.166999996, 0)
+TextButton_6.Size = UDim2.new(-0.0710000023, 75, 0.666999996, 0)
+TextButton_6.Font = Enum.Font.SourceSans
+TextButton_6.Text = "V"
+TextButton_6.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_6.TextSize = 14.000
+
+UICorner_13.Parent = TextButton_6
+
+dwait.Name = "dwait"
+dwait.Parent = aimbot
+dwait.BackgroundColor3 = Color3.fromRGB(197, 197, 197)
+dwait.BorderColor3 = Color3.fromRGB(0, 0, 0)
+dwait.BorderSizePixel = 0
+dwait.Position = UDim2.new(0.0270270277, 0, 0.0434782617, 0)
+dwait.Size = UDim2.new(0, 350, 0, 30)
+
+UICorner_14.Parent = dwait
+
+TextLabel_7.Parent = dwait
+TextLabel_7.AnchorPoint = Vector2.new(0.5, 0.5)
+TextLabel_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_7.BackgroundTransparency = 1.000
+TextLabel_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_7.BorderSizePixel = 0
+TextLabel_7.Position = UDim2.new(0.342857152, 0, 0.5, 0)
+TextLabel_7.Size = UDim2.new(0, 200, 1, 0)
+TextLabel_7.Font = Enum.Font.SourceSans
+TextLabel_7.Text = "wait before look to enemy after dashing"
+TextLabel_7.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_7.TextSize = 14.000
+TextLabel_7.TextXAlignment = Enum.TextXAlignment.Left
+
+TextBox.Parent = dwait
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.819999993, 0, 0.166999996, 0)
+TextBox.Size = UDim2.new(-0.0710000023, 75, 0.666999996, 0)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.Text = "0.1"
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextSize = 14.000
+
+UICorner_15.Parent = TextBox
+
+addY.Name = "addY"
+addY.Parent = aimbot
+addY.BackgroundColor3 = Color3.fromRGB(197, 197, 197)
+addY.BorderColor3 = Color3.fromRGB(0, 0, 0)
+addY.BorderSizePixel = 0
+addY.Position = UDim2.new(0.0270270277, 0, 0.0434782617, 0)
+addY.Size = UDim2.new(0, 350, 0, 30)
+
+UICorner_16.Parent = addY
+
+TextLabel_8.Parent = addY
+TextLabel_8.AnchorPoint = Vector2.new(0.5, 0.5)
+TextLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_8.BackgroundTransparency = 1.000
+TextLabel_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_8.BorderSizePixel = 0
+TextLabel_8.Position = UDim2.new(0.342857152, 0, 0.5, 0)
+TextLabel_8.Size = UDim2.new(0, 200, 1, 0)
+TextLabel_8.Font = Enum.Font.SourceSans
+TextLabel_8.Text = "add y"
+TextLabel_8.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_8.TextSize = 14.000
+TextLabel_8.TextXAlignment = Enum.TextXAlignment.Left
+
+TextBox_2.Parent = addY
+TextBox_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox_2.BorderSizePixel = 0
+TextBox_2.Position = UDim2.new(0.819999993, 0, 0.166999996, 0)
+TextBox_2.Size = UDim2.new(-0.0710000023, 75, 0.666999996, 0)
+TextBox_2.Font = Enum.Font.SourceSans
+TextBox_2.Text = "1.5"
+TextBox_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox_2.TextSize = 14.000
+
+UICorner_17.Parent = TextBox_2
+
+UICorner_18.Parent = Sections
+
+UICorner_19.CornerRadius = UDim.new(0, 15)
+UICorner_19.Parent = mainFrame
 
 Tabs.Name = "Tabs"
 Tabs.Parent = mainFrame
@@ -303,8 +476,8 @@ m1reset_2.Text = "m1reset"
 m1reset_2.TextColor3 = Color3.fromRGB(0, 0, 0)
 m1reset_2.TextSize = 14.000
 
-UICorner_12.CornerRadius = UDim.new(0, 10)
-UICorner_12.Parent = m1reset_2
+UICorner_20.CornerRadius = UDim.new(0, 10)
+UICorner_20.Parent = m1reset_2
 
 aimbot_2.Name = "aimbot"
 aimbot_2.Parent = ScrollingFrame
@@ -319,15 +492,15 @@ aimbot_2.Text = "aimbot"
 aimbot_2.TextColor3 = Color3.fromRGB(0, 0, 0)
 aimbot_2.TextSize = 14.000
 
-UICorner_13.CornerRadius = UDim.new(0, 10)
-UICorner_13.Parent = aimbot_2
+UICorner_21.CornerRadius = UDim.new(0, 10)
+UICorner_21.Parent = aimbot_2
 
 UIListLayout_3.Parent = ScrollingFrame
 UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout_3.Padding = UDim.new(0, 10)
 
-UICorner_14.Parent = Tabs
+UICorner_22.Parent = Tabs
 
 lName.Name = "lName"
 lName.Parent = mainFrame
@@ -337,233 +510,509 @@ lName.BorderSizePixel = 0
 lName.Position = UDim2.new(0.0174116865, 0, 0.0334782936, 0)
 lName.Size = UDim2.new(0, 490, 0, 30)
 
-UICorner_15.Parent = lName
+UICorner_23.Parent = lName
 
-TextLabel_5.Parent = lName
-TextLabel_5.AnchorPoint = Vector2.new(0.5, 0.5)
-TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_5.BackgroundTransparency = 1.000
-TextLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_5.BorderSizePixel = 0
-TextLabel_5.Position = UDim2.new(0.226530612, 0, 0.5, 0)
-TextLabel_5.Size = UDim2.new(0, 200, 1, 0)
-TextLabel_5.Font = Enum.Font.SourceSans
-TextLabel_5.Text = ":)"
-TextLabel_5.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_5.TextSize = 20.000
-TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel_9.Parent = lName
+TextLabel_9.AnchorPoint = Vector2.new(0.5, 0.5)
+TextLabel_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_9.BackgroundTransparency = 1.000
+TextLabel_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_9.BorderSizePixel = 0
+TextLabel_9.Position = UDim2.new(0.226530612, 0, 0.5, 0)
+TextLabel_9.Size = UDim2.new(0, 200, 1, 0)
+TextLabel_9.Font = Enum.Font.SourceSans
+TextLabel_9.Text = ":)"
+TextLabel_9.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_9.TextSize = 20.000
+TextLabel_9.TextXAlignment = Enum.TextXAlignment.Left
 
--- Scripts:
+m1resetTo.Name = "m1resetTo"
+m1resetTo.Parent = zipGui
+m1resetTo.AnchorPoint = Vector2.new(1, 1)
+m1resetTo.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+m1resetTo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+m1resetTo.Position = UDim2.new(1, 0, 1, 0)
+m1resetTo.Size = UDim2.new(0, 50, 0, 50)
 
-local function RJHGU_fake_script() -- zipGui.LocalScript 
-	local script = Instance.new('LocalScript', zipGui)
+aimbotTo.Name = "aimbotTo"
+aimbotTo.Parent = zipGui
+aimbotTo.AnchorPoint = Vector2.new(1, 1)
+aimbotTo.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+aimbotTo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+aimbotTo.Position = UDim2.new(1, -50, 1, 0)
+aimbotTo.Size = UDim2.new(0, 50, 0, 50)
 
-	local ScreenGui = script.Parent
-	local UserInputService = game:GetService("UserInputService")
-	local vim = game:GetService("VirtualInputManager")
-	local RunService = game:GetService("RunService")
-	local Players = game:GetService("Players")
-	local player = Players.LocalPlayer
+AD.Name = "AD"
+AD.Parent = zipGui
+AD.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AD.BorderSizePixel = 0
+AD.Position = UDim2.new(0.5, 0, 1, -140)
+AD.Size = UDim2.new(0, 100, 0, 30)
+AD.ZIndex = 0
+AD.Font = Enum.Font.SourceSans
+AD.Text = "A/D dash: 0"
+AD.TextColor3 = Color3.fromRGB(0, 0, 0)
+AD.TextSize = 14.000
 
-	local main = ScreenGui:WaitForChild("mainFrame")
-	local toggle = ScreenGui:WaitForChild("toggle")
-	local Tabs = main:WaitForChild("Tabs")
-	local Sections = main:WaitForChild("Sections")
+WS.Name = "WS"
+WS.Parent = zipGui
+WS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WS.BorderSizePixel = 0
+WS.Position = UDim2.new(0.5, -100, 1, -140)
+WS.Size = UDim2.new(0, 100, 0, 30)
+WS.ZIndex = 0
+WS.Font = Enum.Font.SourceSans
+WS.Text = "W/S dash: 0"
+WS.TextColor3 = Color3.fromRGB(0, 0, 0)
+WS.TextSize = 14.000
+
+local UserInputService = game:GetService("UserInputService")
+local vim = game:GetService("VirtualInputManager")
+local RunService = game:GetService("RunService")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local main = zipGui:WaitForChild("mainFrame")
+local toggle = zipGui:WaitForChild("toggle")
+local Tabs = main:WaitForChild("Tabs")
+local Sections = main:WaitForChild("Sections")
+local p1togui = zipGui.m1resetTo
+local p2togui = zipGui.aimbotTo
+
+local WSdash = zipGui.WS
+local ADdash = zipGui.AD
+local ws=0
+local ad=0
 
 
-	local p1 = Sections:WaitForChild("m1reset")
-	local p2 = Sections:WaitForChild("aimbot")
-	local page = Sections:WaitForChild("UIPageLayout")
-	local tab = Tabs.ScrollingFrame
+local stoppedConn
+local gld
+local ud
+local mgbd
+local mgcd
+local renderConn=false
 
-	local p1to = false
-	local p1tobut = p1.tog.TextButton
-	local p1tobind = p1.togKeyBind.TextButton
-	local p1fdbind=p1.fdKeyBind.TextButton
+local targetAnimations = {
+	["rbxassetid://10479335397"] = true,
+	["rbxassetid://13380255751"] = true
+}
 
-	local p1tobindkey = Enum.KeyCode.E
-	local p1fdbindkey = Enum.KeyCode.C
-	local p1tobinding = false
-	local p1fdbinding = false
+local p1 = Sections:WaitForChild("m1reset")
+local p2 = Sections:WaitForChild("aimbot")
+local page = Sections:WaitForChild("UIPageLayout")
+local tab = Tabs.ScrollingFrame
 
-	local dd:number = 110
-	local fd:boolean
+local p1to = false
+local p1tobut = p1.tog.TextButton
+local p1tobind = p1.togKeyBind.TextButton
+local p1fdbind=p1.fdKeyBind.TextButton
 
-	function bindKey(txtgui, callback)
-		txtgui.Text = "Press any key"
-		local connection
-		connection = UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
-			if input.UserInputType == Enum.UserInputType.Keyboard then
-				if input.KeyCode ~= Enum.KeyCode.Escape then
-					local output = input.KeyCode
-					txtgui.Text = string.upper(output.Name)
-					if connection then
-						connection:Disconnect()
-					end
-					if callback then
-						callback(output)
-					end
+local p1tobindkey = Enum.KeyCode.E
+local p1fdbindkey = Enum.KeyCode.C
+local p1tobinding = false
+local p1fdbinding = false
+
+local dd:number = 110
+local fd:boolean
+
+
+local p2to = false
+local p2tobut = p2.tog.TextButton
+local p2tobind = p2.togKeyBind.TextButton
+local p2audbind = TextButton_6
+local p2wait = p2.dwait.TextBox
+local p2addY = p2.addY.TextBox
+
+local p2tobindkey = Enum.KeyCode.R
+local p2audbindkey = Enum.KeyCode.V
+local p2tobinding = false
+local p2audbinding = false
+
+--functions
+
+function bindKey(txtgui, callback)
+	txtgui.Text = "Press any key"
+	local connection
+	connection = UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+		if input.UserInputType == Enum.UserInputType.Keyboard then
+			if input.KeyCode ~= Enum.KeyCode.Escape then
+				local output = input.KeyCode
+				txtgui.Text = string.upper(output.Name)
+				if connection then
+					connection:Disconnect()
+				end
+				if callback then
+					callback(output)
 				end
 			end
-		end)
-	end
-
-	function decode(inputString)
-		if inputString=="" or inputString==nil then return nil else
-			local parts = {}
-			for part in string.gmatch(inputString, "([^;]+)") do
-				table.insert(parts, part)
-			end
-			return parts[1]
 		end
-	end
+	end)
+end
 
-	function fDash()
-		local hrp = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-		local h = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
-		if hrp and h then
-			local target=game.Players.LocalPlayer.Character:GetAttribute("LastM1Hitted")
-			fd=true
-			local fp = Instance.new("Part",workspace)
-			fp.Anchored=true
-			fp.CanCollide = false
-			fp.Transparency = 1
-			local anim = Instance.new("Animation")
-			anim.AnimationId = "rbxassetid://10480793962"
-
-			local attach = Instance.new("Attachment",hrp)
-
-			local LinearVelocity = Instance.new("LinearVelocity",attach)
-
-			local part = Instance.new("Part",workspace)
-			part.Anchored = true
-			part.CanCollide = false
-			part.Transparency = 0
-			if game.Players.LocalPlayer.Character:GetAttribute("Character")=="Blade" then
-				part.CFrame = hrp.CFrame * CFrame.new(35,0,0)
-				fp.CFrame = hrp.CFrame * CFrame.new(35,0,0)
-			else
-				part.CFrame = hrp.CFrame * CFrame.new(30,0,0)
-				fp.CFrame = hrp.CFrame * CFrame.new(30,0,0)
-			end
-			local animplay = h:LoadAnimation(anim)
-			animplay:Play()
-
-			LinearVelocity.MaxForce = 9999999
-			LinearVelocity.VectorVelocity = (part.Position-hrp.Position).Unit*Vector3.new(150,0,150)
-			LinearVelocity.Attachment0 = attach
-			task.wait(0.15)
-			attach:Destroy()
-			part:Destroy()
-			LinearVelocity:Destroy()
-			fd=false
-			wait(.06)
-			game.Players.LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity = Vector3.new(0,0,0)
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=fp.CFrame*CFrame.Angles(0,math.rad(80),0)
-			fp:Destroy()
-			task.wait(0.05)
-			vim:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
-			vim:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
-			local look = decode(target)
-			if look ~=nil then
-				local vp1 = workspace.Live:FindFirstChild(look)
-				vp1=vp1.PrimaryPart
-				for i = 1, 100 do
-					hrp.CFrame = CFrame.lookAt(hrp.Position,Vector3.new(vp1.Position.X,hrp.Position.Y,vp1.Position.Z))
-					task.wait()
-				end
-			end
+function decode(inputString)
+	if inputString=="" or inputString==nil then return nil else
+		local parts = {}
+		for part in string.gmatch(inputString, "([^;]+)") do
+			table.insert(parts, part)
 		end
+		return parts[1]
 	end
+end
 
-	function sdc(animationTrack:AnimationTrack,side:boolean)
-		if game.Players.LocalPlayer.Character.Humanoid.FloorMaterial~=Enum.Material.Air then game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) end
-		wait(.02)
-		animationTrack:Stop()
+function fDash()
+	local hrp = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+	local h = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+	if hrp and h then
+		local target=game.Players.LocalPlayer.Character:GetAttribute("LastM1Hitted")
+		fd=true
+		local fp = Instance.new("Part",workspace)
+		fp.Anchored=true
+		fp.CanCollide = false
+		fp.Transparency = 1
+		local anim = Instance.new("Animation")
+		anim.AnimationId = "rbxassetid://10480793962"
+
+		local attach = Instance.new("Attachment",hrp)
+
+		local LinearVelocity = Instance.new("LinearVelocity",attach)
+
 		local part = Instance.new("Part",workspace)
 		part.Anchored = true
 		part.CanCollide = false
-		part.Transparency = 1
-		if side then
-			part.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(40,0,0)
+		part.Transparency = 0
+		if game.Players.LocalPlayer.Character:GetAttribute("Character")=="Ninja" then
+			part.CFrame = hrp.CFrame * CFrame.new(40,0,0)
+			fp.CFrame = hrp.CFrame * CFrame.new(40,0,0)
 		else
-			part.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(-40,0,0)
+			part.CFrame = hrp.CFrame * CFrame.new(30,0,0)
+			fp.CFrame = hrp.CFrame * CFrame.new(30,0,0)
 		end
-		local hy=game.Players.LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity.Y
-		game.Players.LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity = (part.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Unit*Vector3.new(dd,0,dd)
-		game.Players.LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity=Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity.X, hy, game.Players.LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity.Z)
+		local animplay = h:LoadAnimation(anim)
+		animplay:Play()
+
+		LinearVelocity.MaxForce = 9999999
+		LinearVelocity.VectorVelocity = (part.Position-hrp.Position).Unit*Vector3.new(150,0,150)
+		LinearVelocity.Attachment0 = attach
+		task.wait(0.15)
+		attach:Destroy()
 		part:Destroy()
-	end 
-
-	--scripts
-
-	for i,v in pairs(tab:GetDescendants()) do
-		if v:IsA("TextButton") then
-			v.MouseButton1Click:Connect(function()
-				page:JumpTo(Sections:FindFirstChild(v.Name))
-			end)
+		LinearVelocity:Destroy()
+		fd=false
+		wait(.06)
+		hrp.AssemblyLinearVelocity = Vector3.new(0,0,0)
+		hrp.CFrame=fp.CFrame*CFrame.Angles(0,math.rad(80),0)
+		fp:Destroy()
+		task.wait(0.05)
+		vim:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
+		vim:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
+		local look = decode(target)
+		if look ~=nil then
+			local vp1 = workspace.Live:FindFirstChild(look)
+			vp1=vp1.PrimaryPart
+			for i = 1, 100 do
+				hrp.CFrame = CFrame.lookAt(hrp.Position,Vector3.new(vp1.Position.X,hrp.Position.Y,vp1.Position.Z))
+				task.wait()
+			end
 		end
 	end
+end
 
-	toggle.MouseButton1Click:Connect(function()
-		if main.Visible==true then
-			main.Visible=false
-		else
-			main.Visible=true
-		end
-	end)
-	p1tobut.MouseButton1Click:Connect(function() 
-		if p1to==true then
-			p1to=false
-			p1tobut.BackgroundColor3=Color3.fromRGB(255,0,0)
-		else
-			p1to=true
-			p1tobut.BackgroundColor3=Color3.fromRGB(0,255,0)
-		end
-	end)
-	p1tobind.MouseButton1Down:Connect(function()
-		bindKey(p1tobind, function(keyCode)
-			p1tobinding=true
-			p1tobindkey = keyCode
-			task.wait(0.01)
-			p1tobinding=false
+function sdc(animationTrack:AnimationTrack,side:boolean)
+	ad=1.5
+	if game.Players.LocalPlayer.Character.Humanoid.FloorMaterial~=Enum.Material.Air then game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) end
+	wait(.02)
+	animationTrack:Stop()
+	local hrp=game.Players.LocalPlayer.Character.HumanoidRootPart
+	local part = Instance.new("Part",workspace)
+	part.Anchored = true
+	part.CanCollide = false
+	part.Transparency = 1
+	if side then
+		part.CFrame = hrp.CFrame * CFrame.new(40,0,0)
+	else
+		part.CFrame = hrp.CFrame * CFrame.new(-40,0,0)
+	end
+	local hy=hrp.AssemblyLinearVelocity.Y
+	hrp.AssemblyLinearVelocity = (part.Position-hrp.Position).Unit*Vector3.new(dd,0,dd)
+	hrp.AssemblyLinearVelocity=Vector3.new(hrp.AssemblyLinearVelocity.X, hy, hrp.AssemblyLinearVelocity.Z)
+	part:Destroy()
+end 
+
+--scripts
+
+
+function lookUp(hrp:BasePart,thrp:BasePart)
+	local addY=1.5
+	local idk=1
+	local absx = math.abs(thrp.Position.X-hrp.Position.X)
+	local absz = math.abs(thrp.Position.Z-hrp.Position.Z)
+	if absx>=idk or absz>=idk then
+		hrp.CFrame =CFrame.lookAt(hrp.Position,Vector3.new(thrp.Position.X,hrp.Position.Y+addY,thrp.Position.Z))
+	end
+end
+
+function aimbotanim(at:AnimationTrack)
+	local waitmore = false
+	if not p2to then return end
+	local animId = at.Animation.AnimationId
+	if animId == "rbxassetid://12296113986" then
+		vim:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
+		at:GetMarkerReachedSignal("finalslam"):Connect(function()
+			task.wait(0.05)
+			vim:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
+			vim:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
+			vim:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
 		end)
-	end)
-	p1fdbind.MouseButton1Down:Connect(function()
-		bindKey(p1fdbind, function(keyCode)
-			p1fdbinding=true
-			p1fdbindkey = keyCode
-			task.wait(0.01)
-			p1fdbinding=false
+	end
+	if animId == "rbxassetid://95034083206292" and p2to then
+		vim:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
+		waitmore=true
+		mgbd=at:GetMarkerReachedSignal("slam"):Connect(function()
+			task.wait(0.05)
+			game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+			for i=1,25 do 
+				vim:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
+				vim:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
+				task.wait(0.01)
+			end				
+			vim:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
+			mgbd:Disconnect()
 		end)
-	end)
-
-
-	UserInputService.InputBegan:Connect(function(input: InputObject, gameProcessedEvent: boolean) 
-		if input.KeyCode == p1tobindkey and not gameProcessedEvent then
-			if not p1tobinding and not p1fdbinding then
-				if p1to==true then
-					p1to=false
-					p1tobut.BackgroundColor3=Color3.fromRGB(255,0,0)
-				else
-					p1to=true
-					p1tobut.BackgroundColor3=Color3.fromRGB(0,255,0)
-				end	
+	end
+	if animId == "rbxassetid://10503381238" and aud and p2to then
+		ud=at:GetMarkerReachedSignal("hitreg"):Connect(function()
+			task.wait()
+			vim:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
+			vim:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
+			ud:Disconnect()
+			Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			aud=false
+		end)
+	end
+	if animId == "rbxassetid://94638356008696" and p2to then
+		vim:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
+		local slam = 0
+		mgcd=at:GetMarkerReachedSignal("slam"):Connect(function()
+			slam+=1 if slam<3 then return end
+			task.wait(0.05)
+			for i=1,2 do 
+				game.Players.LocalPlayer.Character.Humanoid.JumpPower=75
+				game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+				task.wait()
 			end
-		elseif input.KeyCode == p1fdbindkey and p1to and not gameProcessedEvent then
-			if not p1tobinding and not p1fdbinding then
-				fDash()
+			for i=1,25 do 
+				vim:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
+				vim:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
+				task.wait(0.01)
+			end				
+			mgcd:Disconnect()
+			vim:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
+		end)
+	end
+	if targetAnimations[animId] then
+		local att=game.Players.LocalPlayer.Character:GetAttribute("LastM1Hitted")
+		if att==nil or att=="" then return end
+		local mat=decode(att)
+		local target=workspace.Live:FindFirstChild(mat)
+		if waitmore then
+			task.wait(math.random(4,10)/10)
+		end
+		task.wait(tonumber(p2wait.Text))
+		for i,v in pairs(target:GetDescendants()) do
+			if v:IsA("Part") then
+				v.CanCollide=false
 			end
 		end
+		workspace.Gravity=100
+		local hrp=game.Players.LocalPlayer.Character.HumanoidRootPart
+		renderConn = game:GetService("RunService").RenderStepped:Connect(function()
+			lookUp(hrp,target.HumanoidRootPart)
+		end)
+
+		stoppedConn = at.Stopped:Connect(function()
+			if renderConn then
+				renderConn:Disconnect()
+				workspace.Gravity=192.8
+			end
+			target.Torso.CanCollide=true
+			if ud then
+				ud:Disconnect()
+			end
+			if gld then
+				gld:Disconnect()
+			end
+			if mgbd then
+				mgbd:Disconnect()
+			end
+			if mgcd then
+				mgcd:Disconnect()
+			end
+		end)
+		
+	end
+end
+
+for i,v in pairs(tab:GetDescendants()) do
+	if v:IsA("TextButton") then
+		v.MouseButton1Click:Connect(function()
+			page:JumpTo(Sections:FindFirstChild(v.Name))
+		end)
+	end
+end
+
+--connect function
+
+toggle.MouseButton1Click:Connect(function() --main gui toggle
+	if main.Visible==true then
+		main.Visible=false
+	else
+		main.Visible=true
+	end
+end)
+p1tobut.MouseButton1Click:Connect(function() --m1reset toggle
+	if p1to==true then
+		p1to=false
+		p1tobut.BackgroundColor3=Color3.fromRGB(255,0,0)
+		p1togui.BackgroundColor3=Color3.fromRGB(255,0,0)
+	else
+		p1to=true
+		p1tobut.BackgroundColor3=Color3.fromRGB(0,255,0)
+		p1togui.BackgroundColor3=Color3.fromRGB(0,255,0)
+	end
+end)
+p1tobind.MouseButton1Down:Connect(function() --toggle keybind
+	bindKey(p1tobind, function(keyCode)
+		p1tobinding=true
+		p1tobindkey = keyCode
+		task.wait(0.01)
+		p1tobinding=false
 	end)
-	if game.Players.LocalPlayer.Character:GetAttribute("Character")=="Hunter" then
-			dd=135
-		elseif game.Players.LocalPlayer.Character:GetAttribute("Character")=="Bald" then
-			dd=125
-		else
-			dd=135
+end)
+p1fdbind.MouseButton1Down:Connect(function() --fd bind
+	bindKey(p1fdbind, function(keyCode)
+		p1fdbinding=true
+		p1fdbindkey = keyCode
+		task.wait(0.01)
+		p1fdbinding=false
+	end)
+end)
+
+p2tobut.MouseButton1Click:Connect(function() --aimbot toggle
+	if p2to==true then
+		p2to=false
+		p2tobut.BackgroundColor3=Color3.fromRGB(255,0,0)
+		p2togui.BackgroundColor3=Color3.fromRGB(255,0,0)
+	else
+		p2to=true
+		p2tobut.BackgroundColor3=Color3.fromRGB(0,255,0)
+		p2togui.BackgroundColor3=Color3.fromRGB(0,255,0)
+	end
+end)
+p2tobind.MouseButton1Down:Connect(function() --toggle keybind
+	bindKey(p2tobind, function(keyCode)
+		p2tobinding=true
+		p2tobindkey = keyCode
+		task.wait(0.01)
+		p2tobinding=false
+	end)
+end)
+p2audbind.MouseButton1Down:Connect(function()
+	bindKey(p2audbind, function(keyCode)
+		p2audbinding=true
+		p2audbindkey = keyCode
+		task.wait(0.01)
+		p2audbinding=false
+	end)
+end)
+
+UserInputService.InputBegan:Connect(function(input: InputObject, gameProcessedEvent: boolean) 
+	if input.KeyCode == p1tobindkey and not gameProcessedEvent then
+		if not p1tobinding and not p1fdbinding then
+			if p1to==true then
+				p1to=false
+				p1tobut.BackgroundColor3=Color3.fromRGB(255,0,0)
+				p1togui.BackgroundColor3=Color3.fromRGB(255,0,0)
+			else
+				p1to=true
+				p1tobut.BackgroundColor3=Color3.fromRGB(0,255,0)
+				p1togui.BackgroundColor3=Color3.fromRGB(0,255,0)
+			end	
+		end
+	elseif input.KeyCode == p1fdbindkey and p1to and not gameProcessedEvent then
+		if not p1tobinding and not p1fdbinding then
+			fDash()
+		end
+	elseif input.KeyCode == p2tobindkey and not gameProcessedEvent then
+		if not p2tobinding then
+			if p2to==true then
+				p2to=false
+				p2tobut.BackgroundColor3=Color3.fromRGB(255,0,0)
+				p2togui.BackgroundColor3=Color3.fromRGB(255,0,0)
+			else
+				p2to=true
+				p2tobut.BackgroundColor3=Color3.fromRGB(0,255,0)
+				p2togui.BackgroundColor3=Color3.fromRGB(0,255,0)
+			end	
+		end
+	elseif input.KeyCode == p2audbindkey and p2to and not gameProcessedEvent then
+		if not p2audbinding then
+			if aud then
+				WSdash.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				aud=false
+			else
+				WSdash.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+				aud=true
+			end
+		end
+	end
+end)
+
+game.Players.LocalPlayer.Character.Humanoid.Died:Connect(function()
+	p2to=false
+	if renderConn then
+		renderConn:Disconnect()
+	end
+end)
+
+--scripts
+
+if game.Players.LocalPlayer.Character:GetAttribute("Character")=="Monster" then
+	dd=145
+elseif game.Players.LocalPlayer.Character:GetAttribute("Character")=="Bald" then
+	dd=125
+else
+	dd=135
+end
+game.Players.LocalPlayer.Character.Humanoid.AnimationPlayed:Connect(function(animationTrack: AnimationTrack) 
+	aimbotanim(animationTrack)
+	if targetAnimations[animationTrack.Animation.AnimationId] or animationTrack.Animation.AnimationId=="rbxassetid://10491993682" then
+		ws=5
+	end
+	if animationTrack.Animation.AnimationId == "rbxassetid://10480796021" then 
+		if p1to and not fd then
+			sdc(animationTrack,false)
+		end
+		ad=2
+	elseif animationTrack.Animation.AnimationId == "rbxassetid://10480793962" then 	
+		if p1to and not fd then
+			sdc(animationTrack,true)
+		end
+		ad=2
+	end
+end)
+game.Players.LocalPlayer.CharacterAdded:Connect(function(character: Model)
+	task.wait(1)
+	if game.Players.LocalPlayer.Character:GetAttribute("Character")=="Monster" then
+		dd=145
+	elseif game.Players.LocalPlayer.Character:GetAttribute("Character")=="Bald" then
+		dd=125
+	else
+		dd=135
 	end
 	game.Players.LocalPlayer.Character.Humanoid.AnimationPlayed:Connect(function(animationTrack: AnimationTrack) 
+		if p2to then
+			aimbotanim(animationTrack)
+		end
 		if p1to and not fd then
 			if animationTrack.Animation.AnimationId == "rbxassetid://10480796021" then 
 				sdc(animationTrack,false)
@@ -572,30 +1021,24 @@ local function RJHGU_fake_script() -- zipGui.LocalScript
 			end
 		end
 	end)
-	game.Players.LocalPlayer.CharacterAdded:Connect(function(character: Model)
-		task.wait(1)
-		if game.Players.LocalPlayer.Character:GetAttribute("Character")=="Hunter" then
-			dd=135
-		elseif game.Players.LocalPlayer.Character:GetAttribute("Character")=="Bald" then
-			dd=125
-		else
-			dd=135
+end)
+coroutine.wrap(function() 
+	while task.wait() do
+		if ws>0 then
+			ws-=0.1
+			ws=math.floor(ws*10)/10
+			WSdash.Text="W/S dash: "..ws
+			task.wait(0.1)
 		end
-		game.Players.LocalPlayer.Character.Humanoid.AnimationPlayed:Connect(function(animationTrack: AnimationTrack) 
-			if p1to and not fd then
-				if animationTrack.Animation.AnimationId == "rbxassetid://10480796021" then 
-					sdc(animationTrack,false)
-				elseif animationTrack.Animation.AnimationId == "rbxassetid://10480793962" then 	
-					sdc(animationTrack,true)
-				elseif animationTrack.Animation.AnimationId == "rbxassetid://15290930205" then 
-					local wall = Instance.new("Part",workspace)
-					wall.Transparency=.5
-					wall.Anchored=true wall.Size=Vector3.new(15, 8, 2)
-					wall.CFrame=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,0,10)
-					task.wait(1) wall:Destroy()
-				end
-			end
-		end)
-	end)
-end
-coroutine.wrap(RJHGU_fake_script)()
+	end
+end)()
+coroutine.wrap(function() 
+	while task.wait() do
+		if ad>0 then
+			ad-=0.1
+			ad=math.floor(ad*10)/10
+			ADdash.Text="A/D dash: "..ad
+			task.wait(0.1)
+		end
+	end
+end)()
